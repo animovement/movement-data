@@ -194,11 +194,9 @@ freemocap/freemocap_test_data_by_frame.csv:
     with each other but not with this file, so this was processed by something between
     v1.4 and v1.7 - the window in which FreeMoCap published no processed test data,
     which fits it having come directly from the developers.
-    VERSION DRIFT - this file has 8 columns
-    (frame,timestamp,timestamp_by_camera,model,keypoint,x,y,z). From v1.8.0 there is a
-    9th, reprojection_error. Nothing here covers the 9-column form; it is downloadable
-    from the v1.8.2 release asset freemocap_test_data_processed_with_v1.8.0.zip. See
-    animovement/aniread#117.
+    This file has 8 columns
+    (frame,timestamp,timestamp_by_camera,model,keypoint,x,y,z). From v1.8.0 FreeMoCap
+    writes a 9th, reprojection_error.
 
 idtrackerai/trajectories.h5:
   sha256sum: ad1dc121580e79622d68b68003042b9ebdca4f37181d28d34af48ada60cdc53a

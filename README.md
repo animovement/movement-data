@@ -74,16 +74,6 @@ with the notices in `LICENSES/`.
 under what terms, what was modified, and the references to cite. It also lists the two
 files whose origin is still unresolved. Per-file metadata is in `metadata.yaml`.
 
-### Known coverage gap: FreeMoCap
-
-`freemocap_test_data_by_frame.csv` has 8 columns. FreeMoCap 1.8.2's
-`DataSaver.save_to_tidy_csv()` writes a 9th, `reprojection_error`, so nothing here
-exercises the current layout. FreeMoCap ships no ready-made `by_frame.csv` sample —
-GIN's session-folder fixtures contain the per-model wide CSVs
-(`mediapipe_body_3d_xyz.csv` and friends), which `read_freemocap()` rejects by design —
-so refreshing this fixture means running the FreeMoCap pipeline, not downloading
-anything.
-
 ## Maintaining this repository
 
 Adding a file means adding its `metadata.yaml` block in the same commit. At minimum:
