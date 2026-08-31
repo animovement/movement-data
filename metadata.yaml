@@ -1,0 +1,641 @@
+# Metadata for every file in data/.
+#
+# Schema follows neuroinformatics/movement-test-data so the two repositories stay
+# diffable, with three additions that a *reader* library needs and a *format* library
+# does not:
+#
+#   version:      which release of the producing software wrote the file, and how we
+#                 know. Export layouts drift between releases (FreeMoCap, AnimalTA and
+#                 TRex have all changed theirs), so a fixture is only meaningful if the
+#                 variant it exercises is named.
+#                   source_version  application version, verbatim as recorded in the file
+#                   format_version  export/format spec version, where separately versioned
+#                   determined_by   file      - read out of the file itself
+#                                   inferred  - deduced from column layout or header shape
+#                                   unknown   - not recorded and not safely inferable
+#                   variant         short name for the export layout this file exercises
+#
+#   upstream:     where the file came from, if it was not produced for this repository.
+#   modification: what was changed relative to that upstream, if anything.
+#
+# Regenerate the sha256sum fields with `python3 update_hashes.py`.
+
+AnimalTA/single_individual_multi_arena.csv:
+  sha256sum: 3750f71455b84019254a593ce532562f6e96abb6aa53bcaed2ec484a192381cd
+  source_software: AnimalTA
+  type: poses
+  fps: null
+  species: null
+  number_of_individuals: 1
+  version:
+    source_version: null
+    format_version: null
+    determined_by: inferred
+    variant: wide-per-arena
+  shared_by:
+    name: Vincent Chiara
+    affiliation: AnimalTA lead developer
+  upstream:
+    source: Shared directly by the AnimalTA developer
+    license: null
+  modification: Excerpt of 19 frames; renamed from B42_Coordinates.csv.
+  note: >-
+    Semicolon-delimited, one X/Y column pair per arena per individual
+    (X_Arena0_Ind0, Y_Arena0_Ind0, ...) across 9 arenas. This is the layout
+    read_animalta() detects as detailed = FALSE. Given freely by the developer.
+
+AnimalTA/variable_individuals_single_arena.csv:
+  sha256sum: 3f1c1d5b8448f0f99738d87ed6afe0fb032049df8b21ea80584bf1cced499ead
+  source_software: AnimalTA
+  type: poses
+  fps: null
+  species: null
+  number_of_individuals: variable
+  version:
+    source_version: null
+    format_version: null
+    determined_by: inferred
+    variant: long-with-arena-and-ind
+  shared_by:
+    name: Vincent Chiara
+    affiliation: AnimalTA lead developer
+  upstream:
+    source: Shared directly by the AnimalTA developer
+    license: null
+  modification: Excerpt of 18 rows; renamed from Raw_coordinates_variable_number_targets_1arena.csv.
+  note: >-
+    Long format with explicit Arena and Ind columns, one row per detection. This is
+    the layout read_animalta() detects as detailed = TRUE. Pairs with
+    single_individual_multi_arena.csv to cover both AnimalTA export layouts.
+
+bonsai/LI850.csv:
+  sha256sum: bcf65f612f8699fd732fc14649e8b89174545e90433fd7adb036eb0d8730ec8f
+  source_software: Bonsai
+  type: poses
+  fps: null
+  species: null
+  number_of_individuals: 1
+  version:
+    source_version: null
+    format_version: null
+    determined_by: unknown
+    variant: zipped-tuple-columns
+  shared_by:
+    name: Mikkel Roald-Arbol
+    affiliation: animovement
+  upstream:
+    source: Recorded in-house
+    license: CC-BY-4.0
+  modification: null
+  note: >-
+    Own recording, contributed under the collection licence. Named for the LI-COR
+    LI-850, a CO2/H2O gas analyser used for respirometry, so the recording session
+    involved one - but the file itself contains NO gas-analyser channels. Its 6 zipped items are five image
+    streams (Item1, Item2, Item4, Item5, Item6: ElementType, Size, Depth, Channels,
+    ImageData, RegionOfInterest) plus one measured region (Item3: Centroid.X/Y,
+    Orientation, MajorAxisLength, MinorAxisLength, Area, Timestamp). It is a tracking
+    file, not a respirometry file. Columns are flattened Zip tuples, so the layout
+    depends entirely on the workflow that produced it rather than on a Bonsai release.
+
+c3d/example.c3d:
+  sha256sum: f0b18ab990203b57a43ee0db44dd3424890be6424dea06e55d8618e09a87979c
+  source_software: Qualisys
+  type: poses
+  fps: null
+  species: human
+  number_of_individuals: 1
+  version:
+    source_version: null
+    format_version: null
+    determined_by: unknown
+    variant: point-plus-analog-with-force-platforms
+  shared_by:
+    name: null
+    affiliation: pyomeca
+  upstream:
+    source: https://github.com/pyomeca/ezc3d-testFiles
+    via: https://github.com/ropensci/c3dr
+    file_name: inst/extdata/example.c3d
+    license: GPL-3.0
+  modification: None. Byte-identical to both upstreams.
+  note: >-
+    GPL-3.0; see LICENSES/ezc3d-testFiles-GPL-3.0.txt. Reached this repository via the
+    c3dr R package, which returns it from c3d_example() and documents the origin and
+    licence in ?c3d_example. Note that c3dr itself is MIT - that covers the package
+    code, not this file. A short recording of human walking with a full-body model,
+    including analog channels (e.g. EMG) and two force platforms, made with a Qualisys
+    system. C3D carries no spec-revision field in its header and the writing
+    application is not recoverable from the file, so no version is recorded.
+
+fictrac/fictrac_sample.dat:
+  sha256sum: e756512d6e94ab8c2b2a81c85f85ee7d69a54e4b6194e21064b62c3f239b1f77
+  source_software: FicTrac
+  type: poses
+  fps: null
+  species: null
+  number_of_individuals: 1
+  version:
+    source_version: null
+    format_version: null
+    determined_by: inferred
+    variant: 25-column-dat
+  shared_by:
+    name: Chiyu Lee
+    affiliation: github.com/chiyu1203
+  upstream:
+    source: https://github.com/rjdmoore/fictrac/issues/32
+    license: null
+  modification: Shortened to 127 rows; renamed from fictrac_data.dat.
+  note: >-
+    Shared freely by Chiyu Lee on 2025-02-26 in rjdmoore/fictrac issue #32, in direct
+    response to a request for sample data to develop an R reader against - so it was
+    given for exactly this use, though no licence was stated - see the README on
+    settling that. Not from the FicTrac repository itself, which ships no sample .dat.
+    Headerless 25-column .dat matching doc/data_header.txt; the file records no
+    version of its own, so the variant is inferred from the column count alone.
+
+freemocap/freemocap_test_data_by_frame.csv:
+  sha256sum: 7c9e743ad533a87b548177bff751b5833062ef3df0f173b12b0039f7ef76f06d
+  source_software: FreeMoCap
+  type: poses
+  fps: null
+  species: human
+  number_of_individuals: 1
+  version:
+    source_version: null
+    format_version: null
+    determined_by: inferred
+    variant: by-frame-tidy-8col
+  shared_by:
+    name: null
+    affiliation: null
+  upstream:
+    source: null
+    license: null
+  modification: null
+  note: >-
+    PROVENANCE UNCONFIRMED. The tidy "by frame" export written by
+    DataSaver.save_to_tidy_csv() as <recording_name>_by_frame.csv, covering the
+    mediapipe_body, mediapipe_hand, mediapipe_face and mediapipe_com models over 222
+    frames. This is the only layout aniread::read_freemocap() accepts; it errors on
+    the per-model wide CSVs (mediapipe_body_3d_xyz.csv and friends) that FreeMoCap
+    also writes and that GIN's FreeMoCap session-folder fixtures contain.
+    VERSION DRIFT - this file has 8 columns
+    (frame,timestamp,timestamp_by_camera,model,keypoint,x,y,z). FreeMoCap 1.8.2 writes
+    a 9th, reprojection_error. Nothing here covers the 9-column form, and FreeMoCap
+    ships no ready-made by_frame.csv sample, so replacing this fixture means running
+    the pipeline rather than downloading anything.
+
+idtrackerai/trajectories.h5:
+  sha256sum: ad1dc121580e79622d68b68003042b9ebdca4f37181d28d34af48ada60cdc53a
+  source_software: idtracker.ai
+  type: poses
+  fps: 28
+  species: null
+  number_of_individuals: 8
+  version:
+    source_version: 6.0.0a0
+    format_version: null
+    determined_by: file
+    variant: h5
+  shared_by:
+    name: Jordi Torrents
+    affiliation: idtracker.ai developer
+  upstream:
+    source: idtracker.ai project test data
+    license: null
+  modification: null
+  note: >-
+    Shared freely by one of the idtracker.ai developers. Tracked from test_B.avi,
+    the project's own installation-test video. Estimated accuracy 0.998 before
+    interpolation, 1.0 after.
+
+idtrackerai/trajectories_csv/trajectories.csv:
+  sha256sum: c7384191e34f1adea2f08bf7a898bd4695942614508bc4dc0d518f13b9741be5
+  source_software: idtracker.ai
+  type: poses
+  fps: 28
+  species: null
+  number_of_individuals: 8
+  version:
+    source_version: 6.0.0a0
+    format_version: null
+    determined_by: file
+    variant: csv
+  shared_by:
+    name: Jordi Torrents
+    affiliation: idtracker.ai developer
+  upstream:
+    source: idtracker.ai project test data
+    license: null
+  modification: null
+  note: >-
+    CSV form of the same session as trajectories.h5. idtracker.ai splits the CSV
+    export across three files, all three of which are kept here so the reader can be
+    tested on the complete set.
+
+idtrackerai/trajectories_csv/id_probabilities.csv:
+  sha256sum: 5b9007d6960feeb7e19a3fcf9e0225a0c0b461b19f8c5208519720ba812370b5
+  source_software: idtracker.ai
+  type: poses
+  fps: 28
+  species: null
+  number_of_individuals: 8
+  version:
+    source_version: 6.0.0a0
+    format_version: null
+    determined_by: file
+    variant: csv
+  shared_by:
+    name: Jordi Torrents
+    affiliation: idtracker.ai developer
+  upstream:
+    source: idtracker.ai project test data
+    license: null
+  modification: null
+  note: Per-identity assignment probabilities accompanying trajectories.csv.
+
+idtrackerai/trajectories_csv/attributes.json:
+  sha256sum: 018b743a587a8c23fc7eea85cc95f5b4a29d69acbb4eaf19b28e1eaa102a23a2
+  source_software: idtracker.ai
+  type: metadata
+  fps: 28
+  species: null
+  number_of_individuals: 8
+  version:
+    source_version: 6.0.0a0
+    format_version: null
+    determined_by: file
+    variant: csv
+  shared_by:
+    name: Jordi Torrents
+    affiliation: idtracker.ai developer
+  upstream:
+    source: idtracker.ai project test data
+    license: null
+  modification: null
+  note: >-
+    Session metadata accompanying the CSV export. This is the file that records the
+    idtracker.ai version, the frame rate and the source video path.
+
+motive/motive_sample.csv:
+  sha256sum: 2a59557dd956fc862aaaf8cc7d5c39d577b6657de8f656b750b59888da464fb2
+  source_software: OptiTrack Motive
+  type: poses
+  fps: 100
+  species: null
+  number_of_individuals: 24
+  version:
+    source_version: null
+    format_version: '1.23'
+    determined_by: file
+    variant: rigid-body-quaternion
+  shared_by:
+    name: null
+    affiliation: null
+  upstream:
+    source: null
+    license: null
+  modification: Excerpt; the full take is 190,951 frames.
+  note: >-
+    PROVENANCE UNCONFIRMED. Motive is one of the few formats here that versions its
+    export explicitly: the first header cell reads "Format Version,1.23". Take name
+    sept-18_mixed-group_16-30, captured 2019-09-18 16:30:02, quaternion rotations,
+    global coordinate space, metres. Rigid bodies named device02, device03, ...
+
+movement/SLEAP_two-mice_octagon.analysis-1768334869096.nc:
+  sha256sum: 7433b67770e8f656faeba79ac9c7cfd908c34d4e7956958205c0302aa30528b9
+  source_software: movement
+  type: poses
+  fps: 50
+  species: mouse
+  number_of_individuals: 2
+  version:
+    source_version: null
+    format_version: null
+    determined_by: inferred
+    variant: movement-netcdf-poses
+  shared_by:
+    name: Mehul Rastogi, Chunyu Ann Duan
+    affiliation: Sainsbury Wellcome Centre, UCL
+  upstream:
+    source: https://gin.g-node.org/neuroinformatics/movement-test-data
+    file_name: poses/SLEAP_two-mice_octagon.analysis.h5
+    license: CC-BY-4.0
+  modification: >-
+    Loaded from the upstream SLEAP .h5 with the movement Python package and saved to
+    netCDF. Kept here rather than fetched from GIN because GIN serves the SLEAP form,
+    not the movement netCDF form.
+  note: >-
+    Two mice competing for rewards in an octagonal arena; see
+    https://doi.org/10.1101/2025.02.14.638359. The netCDF global attributes still
+    name the machine that produced it. The movement version that wrote the file is
+    not recorded in the netCDF, so the variant is inferred from the dimension and
+    attribute layout (time/space/keypoints/individuals with position and confidence).
+
+octron/sample-data.csv:
+  sha256sum: c8fcb78ad4122ec5ceb1162f9cb7414456fa9252538bc94a571256e9b16b9704
+  source_software: Octron
+  type: poses
+  fps: null
+  species: null
+  number_of_individuals: 1
+  version:
+    source_version: null
+    format_version: null
+    determined_by: unknown
+    variant: keyed-header-plus-table
+  shared_by:
+    name: Mikkel Roald-Arbol
+    affiliation: animovement
+  upstream:
+    source: Recorded in-house
+    license: CC-BY-4.0
+  modification: >-
+    Excerpt of 27 rows from a declared 420 analysed frames. The label and the video
+    name were both changed to "worm" before sharing, to avoid disclosing unpublished
+    work - so neither reflects the actual species or recording.
+  note: >-
+    Own recording, contributed under the collection licence. Six-line keyed header
+    (video_name, frame_count, frame_count_analyzed, video_height, video_width,
+    created_at) above a 16-column table. Because the label was deliberately
+    anonymised, treat "worm" and "my_cool_video_of_a_worm.mp4" as placeholders and do
+    not cite this file as an example of any particular species.
+
+trackball/single/opticalflow_sensor_1.csv:
+  sha256sum: 8624ac10789166c1337684b0df0d7ec73f0053d401adc862c22df98b6a33e68e
+  source_software: trackball
+  type: poses
+  fps: null
+  species: null
+  number_of_individuals: 1
+  version:
+    source_version: null
+    format_version: null
+    determined_by: unknown
+    variant: unnamed-columns
+  shared_by:
+    name: Mikkel Roald-Arbol
+    affiliation: animovement
+  upstream:
+    source: Recorded in-house
+    license: CC-BY-4.0
+  modification: null
+  note: >-
+    Own recording, contributed under the collection licence. Optical-flow sensor log with
+    no header row, recorded 2023-09-14 at +01:00. Byte-identical to
+    opticalflow_sensor_2.csv - the pair exists to exercise reading two sensors from
+    one directory, not to provide two recordings.
+
+trackball/single/opticalflow_sensor_2.csv:
+  sha256sum: 8624ac10789166c1337684b0df0d7ec73f0053d401adc862c22df98b6a33e68e
+  source_software: trackball
+  type: poses
+  fps: null
+  species: null
+  number_of_individuals: 1
+  version:
+    source_version: null
+    format_version: null
+    determined_by: unknown
+    variant: unnamed-columns
+  shared_by:
+    name: Mikkel Roald-Arbol
+    affiliation: animovement
+  upstream:
+    source: Recorded in-house
+    license: CC-BY-4.0
+  modification: null
+  note: Byte-identical duplicate of opticalflow_sensor_1.csv. See that entry.
+
+trackball/single_named/named_cols_opticalflow_sensor_1.csv:
+  sha256sum: 824194d98b4e876d9fa34e6e5edc66eb58fca410a821e0d318ad9b99f039e8cd
+  source_software: trackball
+  type: poses
+  fps: null
+  species: null
+  number_of_individuals: 1
+  version:
+    source_version: null
+    format_version: null
+    determined_by: unknown
+    variant: named-columns
+  shared_by:
+    name: Mikkel Roald-Arbol
+    affiliation: animovement
+  upstream:
+    source: Recorded in-house
+    license: CC-BY-4.0
+  modification: null
+  note: >-
+    Own recording, contributed under the collection licence. Same recording as
+    trackball/single/ but with a header row, so the two directories together cover
+    both column-naming variants.
+
+trackball/single_named/named_cols_opticalflow_sensor_2.csv:
+  sha256sum: 824194d98b4e876d9fa34e6e5edc66eb58fca410a821e0d318ad9b99f039e8cd
+  source_software: trackball
+  type: poses
+  fps: null
+  species: null
+  number_of_individuals: 1
+  version:
+    source_version: null
+    format_version: null
+    determined_by: unknown
+    variant: named-columns
+  shared_by:
+    name: Mikkel Roald-Arbol
+    affiliation: animovement
+  upstream:
+    source: Recorded in-house
+    license: CC-BY-4.0
+  modification: null
+  note: Byte-identical duplicate of named_cols_opticalflow_sensor_1.csv. See that entry.
+
+trackball/single_named/trackball.zip:
+  sha256sum: 17a2ff9df9b13caa926d9d60ed0068b341eda620486e713143c759bf60b20f01
+  source_software: trackball
+  type: archive
+  fps: null
+  species: null
+  number_of_individuals: 1
+  version:
+    source_version: null
+    format_version: null
+    determined_by: unknown
+    variant: named-columns
+  shared_by:
+    name: Mikkel Roald-Arbol
+    affiliation: animovement
+  upstream:
+    source: Recorded in-house
+    license: CC-BY-4.0
+  modification: Zip of the two named_cols_* files in this directory.
+  note: >-
+    Served by aniread::get_sample_data("trackball") so the reader's multi-file
+    extraction path can be tested from a single download.
+
+trackball/multi/GB_COM6_2021-08-05T15_37_55.csv:
+  sha256sum: 028f6d37f6845bfde728183319c0f3e37723adfa829dbd7aeab15abd760e74b2
+  source_software: trackball
+  type: poses
+  fps: null
+  species: null
+  number_of_individuals: 1
+  version:
+    source_version: null
+    format_version: null
+    determined_by: unknown
+    variant: unnamed-columns
+  shared_by:
+    name: Mikkel Roald-Arbol
+    affiliation: animovement
+  upstream:
+    source: Recorded in-house
+    license: CC-BY-4.0
+  modification: null
+  note: >-
+    Own recording, contributed under the collection licence. Serial port COM6, filename
+    timestamp 2021-08-05. Byte-identical to GB_COM6_2021-08-12T15_37_55.csv - the
+    four files in this directory are two recordings under four names, so that
+    filename-driven session grouping can be tested.
+
+trackball/multi/GB_COM6_2021-08-12T15_37_55.csv:
+  sha256sum: 028f6d37f6845bfde728183319c0f3e37723adfa829dbd7aeab15abd760e74b2
+  source_software: trackball
+  type: poses
+  fps: null
+  species: null
+  number_of_individuals: 1
+  version:
+    source_version: null
+    format_version: null
+    determined_by: unknown
+    variant: unnamed-columns
+  shared_by:
+    name: Mikkel Roald-Arbol
+    affiliation: animovement
+  upstream:
+    source: Recorded in-house
+    license: CC-BY-4.0
+  modification: null
+  note: Byte-identical duplicate of GB_COM6_2021-08-05T15_37_55.csv. See that entry.
+
+trackball/multi/GB_COM7_2021-08-05T15_37_55.csv:
+  sha256sum: 92c4ede2d0bb9157649fd908a9f1b8e8fad2a5f27c0803f18c3bf87fec0e2859
+  source_software: trackball
+  type: poses
+  fps: null
+  species: null
+  number_of_individuals: 1
+  version:
+    source_version: null
+    format_version: null
+    determined_by: unknown
+    variant: unnamed-columns
+  shared_by:
+    name: Mikkel Roald-Arbol
+    affiliation: animovement
+  upstream:
+    source: Recorded in-house
+    license: CC-BY-4.0
+  modification: null
+  note: >-
+    Own recording, contributed under the collection licence. Serial port COM7.
+    Byte-identical to GB_COM7_2021-08-12T15_37_55.csv.
+
+trackball/multi/GB_COM7_2021-08-12T15_37_55.csv:
+  sha256sum: 92c4ede2d0bb9157649fd908a9f1b8e8fad2a5f27c0803f18c3bf87fec0e2859
+  source_software: trackball
+  type: poses
+  fps: null
+  species: null
+  number_of_individuals: 1
+  version:
+    source_version: null
+    format_version: null
+    determined_by: unknown
+    variant: unnamed-columns
+  shared_by:
+    name: Mikkel Roald-Arbol
+    affiliation: animovement
+  upstream:
+    source: Recorded in-house
+    license: CC-BY-4.0
+  modification: null
+  note: Byte-identical duplicate of GB_COM7_2021-08-05T15_37_55.csv. See that entry.
+
+trackball/multi/trackball_filenames.xlsx:
+  sha256sum: d66db1fe91d6974bd9781f08efa7e7ccd28dace6b5dbe0360ce11f5dedc712f4
+  source_software: null
+  type: metadata
+  fps: null
+  species: null
+  number_of_individuals: null
+  version:
+    source_version: null
+    format_version: null
+    determined_by: unknown
+    variant: null
+  shared_by:
+    name: Mikkel Roald-Arbol
+    affiliation: animovement
+  upstream:
+    source: Recorded in-house
+    license: CC-BY-4.0
+  modification: null
+  note: >-
+    Spreadsheet mapping the trackball/multi/ filenames onto sessions. Supporting
+    metadata for the four CSVs above, not tracking data itself.
+
+trackmate/ExampleTrackMateData.xml:
+  sha256sum: 6e3956c3ff373964e83417e69ae811e4f54d722af3433e62d827a3dbfe266622
+  source_software: TrackMate
+  type: poses
+  fps: null
+  species: null
+  number_of_individuals: null
+  version:
+    source_version: 7.7.1
+    format_version: null
+    determined_by: file
+    variant: trackmate-xml
+  shared_by:
+    name: Stephen J. Royle
+    affiliation: Centre for Mechanochemical Cell Biology, University of Warwick
+  upstream:
+    source: https://github.com/quantixed/TrackMateR
+    file_name: inst/extdata/ExampleTrackMateData.xml
+    license: MIT
+  modification: None. Byte-identical to the upstream file.
+  note: >-
+    Copyright (c) 2022 Stephen J. Royle, redistributed under the MIT licence; see
+    LICENSES/TrackMateR-MIT.txt. Written by TrackMate 7.7.1 on 2022-06-23, which the
+    XML records in its root element. aniread's read_trackmate() is itself adapted
+    from the TrackMateR reader.
+
+trex/beetle.csv:
+  sha256sum: b586668d8c98956a1b85a0b61d6d830f55188c8e69a16c4e58b12425a9130e08
+  source_software: TRex
+  type: poses
+  fps: null
+  species: beetle
+  number_of_individuals: 1
+  version:
+    source_version: null
+    format_version: null
+    determined_by: inferred
+    variant: per-individual-csv
+  shared_by:
+    name: Mikkel Roald-Arbol
+    affiliation: animovement
+  upstream:
+    source: Recorded in-house
+    license: CC-BY-4.0
+  modification: Excerpt of 18 frames.
+  note: >-
+    Own recording, contributed under the collection licence. Single-individual TRex
+    export, 30 columns, centimetre units. The '#pcentroid' / '#wcentroid' column
+    suffixes place it in the TRex 1.x output family, but no version is recorded in
+    the file.
