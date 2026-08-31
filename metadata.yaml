@@ -33,7 +33,8 @@ AnimalTA/single_individual_multi_arena.csv:
     determined_by: inferred
     variant: wide-per-arena
   shared_by:
-    name: Vincent Chiara
+    name: Violette Chiara
+    orcid: 0000-0002-3442-5336
     affiliation: AnimalTA lead developer
   upstream:
     source: Shared directly by the AnimalTA developer
@@ -57,7 +58,8 @@ AnimalTA/variable_individuals_single_arena.csv:
     determined_by: inferred
     variant: long-with-arena-and-ind
   shared_by:
-    name: Vincent Chiara
+    name: Violette Chiara
+    orcid: 0000-0002-3442-5336
     affiliation: AnimalTA lead developer
   upstream:
     source: Shared directly by the AnimalTA developer
@@ -82,6 +84,7 @@ bonsai/LI850.csv:
     variant: zipped-tuple-columns
   shared_by:
     name: Mikkel Roald-Arbol
+    orcid: 0000-0002-9998-0058
     affiliation: animovement
   upstream:
     source: Recorded in-house
@@ -140,17 +143,19 @@ fictrac/fictrac_sample.dat:
     determined_by: inferred
     variant: 25-column-dat
   shared_by:
-    name: Chiyu Lee
+    name: Chi-Yu Lee
+    orcid: 0000-0001-6440-3050
     affiliation: github.com/chiyu1203
   upstream:
     source: https://github.com/rjdmoore/fictrac/issues/32
-    license: null
+    license: CC-BY-4.0
   modification: Shortened to 127 rows; renamed from fictrac_data.dat.
   note: >-
-    Shared freely by Chiyu Lee on 2025-02-26 in rjdmoore/fictrac issue #32, in direct
+    Shared freely by Chi-Yu Lee (@chiyu1203) on 2025-02-26 in rjdmoore/fictrac issue #32, in direct
     response to a request for sample data to develop an R reader against - so it was
-    given for exactly this use, though no licence was stated - see the README on
-    settling that. Not from the FicTrac repository itself, which ships no sample .dat.
+    given for exactly this use. On 2026-08-31, in the same thread, they confirmed
+    the file may sit under this collection's CC BY 4.0 licence with attribution to them.
+    Not from the FicTrac repository itself, which ships no sample .dat.
     Headerless 25-column .dat matching doc/data_header.txt; the file records no
     version of its own, so the variant is inferred from the column count alone.
 
@@ -209,7 +214,8 @@ idtrackerai/trajectories.h5:
     variant: h5
   shared_by:
     name: Jordi Torrents
-    affiliation: idtracker.ai developer
+    orcid: 0009-0006-6353-4079
+    affiliation: idtracker.ai developer, Champalimaud Foundation
   upstream:
     source: idtracker.ai project test data
     license: null
@@ -327,7 +333,8 @@ movement/SLEAP_two-mice_octagon.analysis-1768334869096.nc:
     determined_by: inferred
     variant: movement-netcdf-poses
   shared_by:
-    name: Mehul Rastogi, Chunyu Ann Duan
+    name: Mehul Rastogi, Chunyu A. Duan
+    orcid: 0000-0002-5315-3188, 0000-0002-3095-8653
     affiliation: Sainsbury Wellcome Centre, UCL
   upstream:
     source: https://gin.g-node.org/neuroinformatics/movement-test-data
@@ -358,6 +365,7 @@ octron/sample-data.csv:
     variant: keyed-header-plus-table
   shared_by:
     name: Mikkel Roald-Arbol
+    orcid: 0000-0002-9998-0058
     affiliation: animovement
   upstream:
     source: Recorded in-house
@@ -387,6 +395,7 @@ trackball/single/opticalflow_sensor_1.csv:
     variant: unnamed-columns
   shared_by:
     name: Mikkel Roald-Arbol
+    orcid: 0000-0002-9998-0058
     affiliation: animovement
   upstream:
     source: Recorded in-house
@@ -412,6 +421,7 @@ trackball/single/opticalflow_sensor_2.csv:
     variant: unnamed-columns
   shared_by:
     name: Mikkel Roald-Arbol
+    orcid: 0000-0002-9998-0058
     affiliation: animovement
   upstream:
     source: Recorded in-house
@@ -433,6 +443,7 @@ trackball/single_named/named_cols_opticalflow_sensor_1.csv:
     variant: named-columns
   shared_by:
     name: Mikkel Roald-Arbol
+    orcid: 0000-0002-9998-0058
     affiliation: animovement
   upstream:
     source: Recorded in-house
@@ -457,6 +468,7 @@ trackball/single_named/named_cols_opticalflow_sensor_2.csv:
     variant: named-columns
   shared_by:
     name: Mikkel Roald-Arbol
+    orcid: 0000-0002-9998-0058
     affiliation: animovement
   upstream:
     source: Recorded in-house
@@ -478,6 +490,7 @@ trackball/single_named/trackball.zip:
     variant: named-columns
   shared_by:
     name: Mikkel Roald-Arbol
+    orcid: 0000-0002-9998-0058
     affiliation: animovement
   upstream:
     source: Recorded in-house
@@ -501,6 +514,7 @@ trackball/multi/GB_COM6_2021-08-05T15_37_55.csv:
     variant: unnamed-columns
   shared_by:
     name: Mikkel Roald-Arbol
+    orcid: 0000-0002-9998-0058
     affiliation: animovement
   upstream:
     source: Recorded in-house
@@ -526,6 +540,7 @@ trackball/multi/GB_COM6_2021-08-12T15_37_55.csv:
     variant: unnamed-columns
   shared_by:
     name: Mikkel Roald-Arbol
+    orcid: 0000-0002-9998-0058
     affiliation: animovement
   upstream:
     source: Recorded in-house
@@ -547,6 +562,7 @@ trackball/multi/GB_COM7_2021-08-05T15_37_55.csv:
     variant: unnamed-columns
   shared_by:
     name: Mikkel Roald-Arbol
+    orcid: 0000-0002-9998-0058
     affiliation: animovement
   upstream:
     source: Recorded in-house
@@ -570,6 +586,7 @@ trackball/multi/GB_COM7_2021-08-12T15_37_55.csv:
     variant: unnamed-columns
   shared_by:
     name: Mikkel Roald-Arbol
+    orcid: 0000-0002-9998-0058
     affiliation: animovement
   upstream:
     source: Recorded in-house
@@ -591,6 +608,7 @@ trackball/multi/trackball_filenames.xlsx:
     variant: null
   shared_by:
     name: Mikkel Roald-Arbol
+    orcid: 0000-0002-9998-0058
     affiliation: animovement
   upstream:
     source: Recorded in-house
@@ -614,6 +632,7 @@ trackmate/ExampleTrackMateData.xml:
     variant: trackmate-xml
   shared_by:
     name: Stephen J. Royle
+    orcid: 0000-0001-8927-6967
     affiliation: Centre for Mechanochemical Cell Biology, University of Warwick
   upstream:
     source: https://github.com/quantixed/TrackMateR
@@ -640,6 +659,7 @@ trex/beetle.csv:
     variant: per-individual-csv
   shared_by:
     name: Mikkel Roald-Arbol
+    orcid: 0000-0002-9998-0058
     affiliation: animovement
   upstream:
     source: Recorded in-house
