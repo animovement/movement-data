@@ -1,0 +1,60 @@
+# Checks that metadata.yaml stays in step with data/.
+#
+# Unlike the other animovement repositories this workflow is self-contained
+# rather than a stub calling animovement/.github, because the check is specific
+# to this repository: there is no second data repository to share it with.
+#
+# It fails when a data file has no metadata block, when a metadata block names a
+# file that no longer exists, or when a recorded sha256sum is stale. All three
+# mean the provenance record no longer describes what the repository serves.
+name: metadata
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions: read-all
+
+jobs:
+  metadata:
+    name: metadata
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Check metadata.yaml against data/
+        run: python3 update_hashes.py --check
+
+      - name: Check metadata.yaml parses
+        run: |
+          python3 -m pip install --quiet pyyaml
+          python3 - <<'PY'
+          import sys, yaml
+          with open("metadata.yaml", encoding="utf-8") as f:
+              entries = yaml.safe_load(f)
+          print(f"metadata.yaml parses: {len(entries)} entries")
+
+          required = {"sha256sum", "source_software", "version", "shared_by",
+                      "upstream", "modification", "note"}
+          problems = []
+          for name, entry in entries.items():
+              missing = required - set(entry)
+              if missing:
+                  problems.append(f"{name}: missing {', '.join(sorted(missing))}")
+              determined_by = (entry.get("version") or {}).get("determined_by")
+              if determined_by not in {"file", "inferred", "unknown"}:
+                  problems.append(
+                      f"{name}: version.determined_by is {determined_by!r}, "
+                      "expected file, inferred or unknown"
+                  )
+
+          for problem in problems:
+              print(problem, file=sys.stderr)
+          sys.exit(1 if problems else 0)
+          PY

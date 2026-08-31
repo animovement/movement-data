@@ -1,0 +1,23 @@
+# Puts new issues and pull requests on the org project board as they are opened.
+# The workflow lives in animovement/.github so it is maintained in one place;
+# only the triggers are declared here, because GitHub fires them against this
+# repository.
+#
+# `pull_request_target` rather than `pull_request` so the organisation secret
+# holding the project token is available on pull requests from forks. Nothing
+# from the pull request is checked out or executed — the job only reads the
+# event's URL.
+name: add-to-project
+
+on:
+  issues:
+    types: [opened, reopened, transferred]
+  pull_request_target:
+    types: [opened, reopened]
+
+permissions: read-all
+
+jobs:
+  add-to-project:
+    uses: animovement/.github/.github/workflows/add-to-project.yml@main
+    secrets: inherit

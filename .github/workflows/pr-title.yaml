@@ -1,0 +1,15 @@
+# Checks that the pull request title is a Conventional Commit. The workflow lives
+# in animovement/.github so it is maintained in one place; only the trigger is
+# declared here, because GitHub fires it against this repository.
+name: pr-title
+
+on:
+  pull_request:
+    types: [opened, edited, reopened, synchronize]
+
+permissions: read-all
+
+jobs:
+  pr-title:
+    uses: animovement/.github/.github/workflows/pr-title.yml@main
+    secrets: inherit
