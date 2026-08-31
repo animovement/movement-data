@@ -168,23 +168,32 @@ freemocap/freemocap_test_data_by_frame.csv:
     variant: by-frame-tidy-8col
   shared_by:
     name: null
-    affiliation: null
+    affiliation: FreeMoCap
   upstream:
-    source: null
+    source: https://github.com/freemocap/freemocap/releases
+    file_name: freemocap_test_data_by_frame.csv
     license: null
   modification: null
   note: >-
-    PROVENANCE UNCONFIRMED. The tidy "by frame" export written by
-    DataSaver.save_to_tidy_csv() as <recording_name>_by_frame.csv, covering the
-    mediapipe_body, mediapipe_hand, mediapipe_face and mediapipe_com models over 222
-    frames. This is the only layout aniread::read_freemocap() accepts; it errors on
-    the per-model wide CSVs (mediapipe_body_3d_xyz.csv and friends) that FreeMoCap
-    also writes and that GIN's FreeMoCap session-folder fixtures contain.
+    The FreeMoCap project's own test recording, processed and shared by the FreeMoCap
+    developers; the specific handover is not on record. The tidy "by frame" export
+    written by DataSaver.save_to_tidy_csv() as <recording_name>_by_frame.csv, covering
+    the mediapipe_body, mediapipe_hand, mediapipe_face and mediapipe_com models over
+    222 frames (0-221). Confirmed to be the same underlying recording as the
+    freemocap_test_data_processed_with_* release assets - same frames, keypoints and
+    models - but processed in a different reference frame, so no released asset matches
+    it byte-for-byte.
+    VERSION WINDOW - the by_frame export does not exist in the v1.3.0 or v1.4.0
+    processed assets, which ship by_trajectory.csv and the wide output_data CSVs
+    instead. It does exist by v1.7.0. The v1.7.0 and v1.8.0 assets share coordinates
+    with each other but not with this file, so this was processed by something between
+    v1.4 and v1.7 - the window in which FreeMoCap published no processed test data,
+    which fits it having come directly from the developers.
     VERSION DRIFT - this file has 8 columns
-    (frame,timestamp,timestamp_by_camera,model,keypoint,x,y,z). FreeMoCap 1.8.2 writes
-    a 9th, reprojection_error. Nothing here covers the 9-column form, and FreeMoCap
-    ships no ready-made by_frame.csv sample, so replacing this fixture means running
-    the pipeline rather than downloading anything.
+    (frame,timestamp,timestamp_by_camera,model,keypoint,x,y,z). From v1.8.0 there is a
+    9th, reprojection_error. Nothing here covers the 9-column form; it is downloadable
+    from the v1.8.2 release asset freemocap_test_data_processed_with_v1.8.0.zip. See
+    animovement/aniread#117.
 
 idtrackerai/trajectories.h5:
   sha256sum: ad1dc121580e79622d68b68003042b9ebdca4f37181d28d34af48ada60cdc53a
