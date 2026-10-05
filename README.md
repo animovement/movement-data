@@ -32,7 +32,7 @@ that wrote it, the export variant it exercises, who shared it, and what was modi
 
 ## Relationship to the GIN server
 
-The [neuroinformatics/movement-test-data](https://gin.g-node.org/neuroinformatics/movement-test-data)
+The [neuroinformatics/movement-sample-data](https://gin.swc.ucl.ac.uk/neuroinformatics/movement-sample-data)
 repository on G-Node GIN is the sample-data home of the
 [movement](https://movement.neuroinformatics.dev/) Python package. It is well curated
 and well documented, and this repository deliberately does not duplicate it.
