@@ -20,6 +20,120 @@
 #
 # Regenerate the sha256sum fields with `python3 update_hashes.py`.
 
+accelerometer/bebe/CRAT_ACT_TrainingDataset_2016-2018IMRS.csv:
+  sha256sum: 9fca7ae5cbe0d89ff5eba8e9decbd56f26cae4c5b4a56fab92f15821a1091592
+  source_software: null
+  type: accelerometry
+  fps: 1
+  species: Crotalus atrox
+  number_of_individuals: 1
+  version:
+    source_version: null
+    format_version: null
+    determined_by: unknown
+    variant: bebe-raw-csv
+  shared_by:
+    name: Dominic L. DeSantis, Vicente Mata-Silva, Jerry D. Johnson, Amy E. Wagler
+    affiliation: null
+  upstream:
+    source: https://doi.org/10.5281/zenodo.7947104
+    file_name: raw_desantis_rattlesnakes.zip/raw_desantis_rattlesnakes/CRAT_ACT_TrainingDataset_2016-2018IMRS.csv
+    license: CC-BY-4.0
+  modification: >-
+    Excerpt: the header and the first 2,000 of 114,009 rows, otherwise
+    byte-identical.
+  note: >-
+    Western diamondback rattlesnake (CRAT) accelerometry from the Bio-logger Ethogram
+    Benchmark (BEBE) [Hoffman et al. 2024], recorded by DeSantis et al. (2020).
+    The dataset's own license.txt, inside the zip, states CC BY 4.0 and asks
+    that DeSantis et al. (2020) be cited; cite the BEBE paper too. One row per
+    second: TagID, Date, Time, X, Ydyn, Z, ODBA, VDBA, Pressure, Body Temp,
+    and the behaviour annotation (Behavior, Posture, Description, Video). The
+    excerpt covers tag RT-ACT1 from 2016-07-15 20:13:37. The logger model and
+    its software are not stated in the file.
+
+accelerometer/cwa/ax3_testfile.cwa:
+  sha256sum: 602c8169484fa6e8b03cd5d307b2d48ddf361718121281cf8aa6b9fbc1ff158a
+  source_software: Axivity AX3
+  type: accelerometry
+  fps: 100
+  species: null
+  number_of_individuals: 1
+  version:
+    source_version: null
+    format_version: null
+    determined_by: file
+    variant: cwa-ax3-3-axis
+  shared_by:
+    name: Vincent T van Hees
+    affiliation: GGIRread maintainer
+  upstream:
+    source: https://github.com/wadpac/GGIRread
+    file_name: inst/testfiles/ax3_testfile.cwa
+    license: Apache-2.0
+  modification: None. Byte-identical to the upstream file.
+  note: >-
+    Apache-2.0; see LICENSES/GGIRread-Apache-2.0.txt. GGIRread's DESCRIPTION
+    names the Medical Research Council UK and Accelting as copyright holders.
+    Axivity's binary CWA format: a 1,024-byte metadata block followed by 145
+    512-byte data blocks of 3-axis acceleration at 100 Hz, range +/-8 g, as
+    read from the first data block. In GGIRread since its first commit
+    (2022-07-28). Who wore the device is not stated.
+
+accelerometer/cwa/ax6_testfile.cwa:
+  sha256sum: c7dca51d8c357db2a876ac458f9e735cfdc6ee2c2b72d9b9387afd1039dc9572
+  source_software: Axivity AX6
+  type: accelerometry
+  fps: 100
+  species: null
+  number_of_individuals: 1
+  version:
+    source_version: null
+    format_version: null
+    determined_by: file
+    variant: cwa-ax6-6-axis
+  shared_by:
+    name: Vincent T van Hees
+    affiliation: GGIRread maintainer
+  upstream:
+    source: https://github.com/wadpac/GGIRread
+    file_name: inst/testfiles/ax6_testfile.cwa
+    license: Apache-2.0
+  modification: None. Byte-identical to the upstream file.
+  note: >-
+    Apache-2.0; see LICENSES/GGIRread-Apache-2.0.txt. The six-axis variant of
+    CWA (accelerometer plus gyroscope): a 1,024-byte metadata block followed
+    by 283 data blocks at 100 Hz, range +/-16 g, as read from the first data
+    block. Added to GGIRread on 2023-08-07 (towards GGIRread 0.3.0).
+
+accelerometer/gt3x/example.gt3x:
+  sha256sum: f7604aa14f48f52d8d39b5f4d2f64f5637579af7eb1d25e2a8a978038a8eb810
+  source_software: ActiGraph
+  type: accelerometry
+  fps: 100
+  species: human
+  number_of_individuals: 1
+  version:
+    source_version: 1.7.2
+    format_version: null
+    determined_by: file
+    variant: gt3x-link
+  shared_by:
+    name: Brian C. Helsel
+    affiliation: University of Kansas
+  upstream:
+    source: https://github.com/bhelsel/agcounts
+    file_name: inst/extdata/example.gt3x
+    license: MIT
+  modification: None. Byte-identical to the upstream file.
+  note: >-
+    MIT, Copyright (c) 2024 University of Kansas; see
+    LICENSES/agcounts-MIT.txt. Also shipped in agcounts on CRAN. A GT3X zip of
+    info.txt, log.bin and epoch.bin; info.txt records Device Type "Link"
+    (ActiGraph GT9X Link), firmware 1.7.2, 100 Hz, +/-8 g, wrist, subject name
+    "example", and three minutes of recording. The version recorded is the
+    device firmware, not a software release. Added to agcounts on 2023-06-09.
+
 AnimalTA/single_individual_multi_arena.csv:
   sha256sum: 3750f71455b84019254a593ce532562f6e96abb6aa53bcaed2ec484a192381cd
   source_software: AnimalTA
@@ -44,6 +158,9 @@ AnimalTA/single_individual_multi_arena.csv:
     Semicolon-delimited, one X/Y column pair per arena per individual
     (X_Arena0_Ind0, Y_Arena0_Ind0, ...) across 9 arenas. This is the layout
     read_animalta() detects as detailed = FALSE. Given freely by the developer.
+    The sample-data audit (movement-data#12) found no licensed public AnimalTA
+    outputs upstream, so the two shared files are the only real samples; the
+    licence still needs confirming with AnimalTA's authors.
 
 AnimalTA/variable_individuals_single_arena.csv:
   sha256sum: 3f1c1d5b8448f0f99738d87ed6afe0fb032049df8b21ea80584bf1cced499ead
@@ -69,6 +186,213 @@ AnimalTA/variable_individuals_single_arena.csv:
     Long format with explicit Arena and Ind columns, one row per detection. This is
     the layout read_animalta() detects as detailed = TRUE. Pairs with
     single_individual_multi_arena.csv to cover both AnimalTA export layouts.
+    See single_individual_multi_arena.csv for the licence status
+    (movement-data#12).
+
+AnimalTA/detailed/video1/Arena_0Ind0.csv:
+  sha256sum: 08d8a3b9cb0a4c44d695335ee014d355d3a287919ab923b5024318d8ea5fcf63
+  source_software: AnimalTA
+  type: poses
+  fps: 25
+  species: null
+  number_of_individuals: 1
+  version:
+    source_version: null
+    format_version: null
+    determined_by: inferred
+    variant: detailed-data-default-columns
+  shared_by:
+    name: Mikkel Roald-Arbol
+    orcid: 0000-0002-9998-0058
+    affiliation: animovement
+  upstream:
+    source: >-
+      Synthetic, written with AnimalTA's own export code (https://github.com/VioletteChiara/AnimalTA at commit 840af1b, v4.2.0-9-g840af1b; AnimalTA is MIT)
+    license: CC-BY-4.0
+  modification: null
+  note: >-
+    SYNTHETIC. Made-up positions passed through AnimalTA's prepare_details()
+    and the header and row loop of its "Run analyses" export, copied from
+    Interface_selection_track_and_analyses.py, with only the cv2-dependent
+    Functions_Analyses_Speed module stubbed. This is AnimalTA's real
+    "detailed data" file, one per target, written to
+    Results/Detailed_data/<video>/Arena_<a><target>.csv. Default columns
+    (Time;X;Y;Distance;Speed;Moving), no Frame column, 25 fps, unsmoothed,
+    AnimalTA's nan for missing values. Written for aniread PR #162, which reads
+    it with read_animalta(format = "detailed"); it is
+    tests/testthat/data/animalta/detailed/video1/Arena_0Ind0.csv there.
+
+AnimalTA/detailed/video2/Arena_1Ind0.csv:
+  sha256sum: 268e28b820227b2621f5247a24c805ba15452934bed9f85d378ce6b7c17b8e05
+  source_software: AnimalTA
+  type: poses
+  fps: 30
+  species: null
+  number_of_individuals: 1
+  version:
+    source_version: null
+    format_version: null
+    determined_by: inferred
+    variant: detailed-data-smoothed-with-frame
+  shared_by:
+    name: Mikkel Roald-Arbol
+    orcid: 0000-0002-9998-0058
+    affiliation: animovement
+  upstream:
+    source: >-
+      Synthetic, written with AnimalTA's own export code (https://github.com/VioletteChiara/AnimalTA at commit 840af1b, v4.2.0-9-g840af1b; AnimalTA is MIT)
+    license: CC-BY-4.0
+  modification: null
+  note: >-
+    SYNTHETIC. Written as for detailed/video1/Arena_0Ind0.csv, but with the
+    Frame column ticked, smoothing on (X_Smoothed;Y_Smoothed) and
+    inter-individual distances (Dist_to_Ind1;Dist_to_Ind2), at 30 fps. One of
+    two targets from the same video; pairs with Arena_1Ind2.csv, which starts
+    at a later frame, so several detailed files can be read as one recording.
+    Written for aniread PR #162.
+
+AnimalTA/detailed/video2/Arena_1Ind2.csv:
+  sha256sum: a7648d90c17e0ff1bf45fead827fae70bffd0fde55a931949023e2f5e118c30b
+  source_software: AnimalTA
+  type: poses
+  fps: 30
+  species: null
+  number_of_individuals: 1
+  version:
+    source_version: null
+    format_version: null
+    determined_by: inferred
+    variant: detailed-data-smoothed-with-frame
+  shared_by:
+    name: Mikkel Roald-Arbol
+    orcid: 0000-0002-9998-0058
+    affiliation: animovement
+  upstream:
+    source: >-
+      Synthetic, written with AnimalTA's own export code (https://github.com/VioletteChiara/AnimalTA at commit 840af1b, v4.2.0-9-g840af1b; AnimalTA is MIT)
+    license: CC-BY-4.0
+  modification: null
+  note: >-
+    SYNTHETIC. Second target of detailed/video2/; see Arena_1Ind0.csv. Its
+    first row is frame 4, because AnimalTA writes a row for every frame from a
+    target's first appearance to its last. Written for aniread PR #162.
+
+AnimalTA/detailed/video3/Arena_0Ind0_part0.csv:
+  sha256sum: e59960e8f70048229c98da2eb0dec9329d23c0a15e373362daf10b109563dd0b
+  source_software: AnimalTA
+  type: poses
+  fps: 30
+  species: null
+  number_of_individuals: 1
+  version:
+    source_version: null
+    format_version: null
+    determined_by: inferred
+    variant: detailed-data-head-tail-parts
+  shared_by:
+    name: Mikkel Roald-Arbol
+    orcid: 0000-0002-9998-0058
+    affiliation: animovement
+  upstream:
+    source: >-
+      Synthetic, written with AnimalTA's own export code (https://github.com/VioletteChiara/AnimalTA at commit 840af1b, v4.2.0-9-g840af1b; AnimalTA is MIT)
+    license: CC-BY-4.0
+  modification: null
+  note: >-
+    SYNTHETIC. Detailed data of the head end (part0) of a target tracked with
+    "Separate head from tail", which AnimalTA treats as two identities,
+    Ind0_part0 and Ind0_part1. Derived from head_tail_two_arenas.csv's arena 0
+    through Coos_loader_saver.load_fixed() and the "Run analyses" export,
+    copied from AnimalTA. Default columns, no Frame column, 30 fps. The header
+    lists Dist_to_Ind0_part1 while the rows stop after Moving, as the copied
+    export loop wrote them. Written for aniread PR #162.
+
+AnimalTA/detailed/video3/Arena_0Ind0_part1.csv:
+  sha256sum: c233e5c600043df1a90ceddeec222d40880933400b8b80d885e4bd00a97f28d6
+  source_software: AnimalTA
+  type: poses
+  fps: 30
+  species: null
+  number_of_individuals: 1
+  version:
+    source_version: null
+    format_version: null
+    determined_by: inferred
+    variant: detailed-data-head-tail-parts
+  shared_by:
+    name: Mikkel Roald-Arbol
+    orcid: 0000-0002-9998-0058
+    affiliation: animovement
+  upstream:
+    source: >-
+      Synthetic, written with AnimalTA's own export code (https://github.com/VioletteChiara/AnimalTA at commit 840af1b, v4.2.0-9-g840af1b; AnimalTA is MIT)
+    license: CC-BY-4.0
+  modification: null
+  note: >-
+    SYNTHETIC. Tail end (part1) of the target in Arena_0Ind0_part0.csv; see
+    that entry. Written for aniread PR #162.
+
+AnimalTA/head_tail_two_arenas.csv:
+  sha256sum: fbbf1140a135b255a60c85b3326383a87d818973a664bebee857faa5418feb3a
+  source_software: AnimalTA
+  type: poses
+  fps: 30
+  species: null
+  number_of_individuals: 3
+  version:
+    source_version: null
+    format_version: null
+    determined_by: inferred
+    variant: fixed-with-head-tail
+  shared_by:
+    name: Mikkel Roald-Arbol
+    orcid: 0000-0002-9998-0058
+    affiliation: animovement
+  upstream:
+    source: >-
+      Synthetic, header written with AnimalTA's own code (https://github.com/VioletteChiara/AnimalTA at commit 840af1b, v4.2.0-9-g840af1b; AnimalTA is MIT)
+    license: CC-BY-4.0
+  modification: null
+  note: >-
+    SYNTHETIC. Coordinates file of a fixed-number tracking with "Separate head
+    from tail": arena 0 holds one target, which gets
+    X_Arena0_Ind0_Head;Y_..._Head;X_..._Tail;Y_..._Tail, and arena 1 holds two,
+    which keep a plain X/Y pair. The header comes from
+    Function_assign_cnts.Treat_cnts_fixed()'s header code; the rows follow its
+    row format (integer frame, time rounded to 0.01 s, integer skeleton end
+    points for head and tail, float centroids, NA where a target was lost).
+    31 frames, one second at 30 fps, with the head and tail lost in frame 2.
+    Written for aniread PR #162.
+
+AnimalTA/head_tail_two_arenas_corrected.csv:
+  sha256sum: b31fb1d3ca91c5274a52ccdfe2d388fb0499eade4d0904879ec043b6ab8cfe5b
+  source_software: AnimalTA
+  type: poses
+  fps: 30
+  species: null
+  number_of_individuals: 3
+  version:
+    source_version: null
+    format_version: null
+    determined_by: inferred
+    variant: fixed-with-head-tail-parts-corrected
+  shared_by:
+    name: Mikkel Roald-Arbol
+    orcid: 0000-0002-9998-0058
+    affiliation: animovement
+  upstream:
+    source: >-
+      Synthetic, written with AnimalTA's own code (https://github.com/VioletteChiara/AnimalTA at commit 840af1b, v4.2.0-9-g840af1b; AnimalTA is MIT)
+    license: CC-BY-4.0
+  modification: null
+  note: >-
+    SYNTHETIC. head_tail_two_arenas.csv after AnimalTA has loaded and saved it
+    again (for instance after correction): the launcher gives the lone target
+    the identities Ind0_part0 and Ind0_part1, Coos_loader_saver.load_fixed()
+    fills part0 from the _Head columns and part1 from the _Tail ones, and
+    Coos_loader_saver.save_fixed() names the columns from the identities
+    (X_Arena0_Ind0_part0, ...). Both functions were copied from AnimalTA, less
+    the tkinter progress bar. Written for aniread PR #162.
 
 bonsai/LI850.csv:
   sha256sum: bcf65f612f8699fd732fc14649e8b89174545e90433fd7adb036eb0d8730ec8f
@@ -129,6 +453,168 @@ c3d/example.c3d:
     including analog channels (e.g. EMG) and two force platforms, made with a Qualisys
     system. C3D carries no spec-revision field in its header and the writing
     application is not recoverable from the file, so no version is recorded.
+    The sample-data audit (movement-data#12) found it byte-identical to
+    Qualisys.c3d in pyomeca/ezc3d-testFiles, written by Qualisys Track Manager
+    2.17. A permissively licensed native C3D, Sample_Static.c3d (MIT, Vicon
+    Nexus 1.8.5), is now beside it; c3d.org's sample archives state no licence.
+
+c3d/Sample_Static.c3d:
+  sha256sum: 16cc70aeb15a0eb0dcfea54fb6c08c5e408f027e5aba17f7b38ecd4ffe300a8b
+  source_software: Vicon Nexus
+  type: poses
+  fps: 100
+  species: human
+  number_of_individuals: 1
+  version:
+    source_version: 1.8.5.61009h
+    format_version: null
+    determined_by: file
+    variant: point-plus-analog-plug-in-gait
+  shared_by:
+    name: Mathew Schwartz
+    affiliation: pyCGM
+  upstream:
+    source: https://github.com/cadop/pyCGM
+    file_name: SampleData/ROM/Sample_Static.c3d
+    license: MIT
+  modification: None. Byte-identical to the upstream file.
+  note: >-
+    MIT, Copyright (c) 2015 cadop; see LICENSES/pyCGM-MIT.txt. A permissively
+    licensed native C3D, found in the sample-data audit (movement-data#12) as an
+    alternative to the GPL-3.0 example.c3d. The MANUFACTURER parameter group
+    records Vicon / Vicon Nexus / 1.8.5.61009h. 275 frames at 100 Hz, 141
+    points in mm (Plug-in Gait markers and model outputs), 10 analog channels,
+    subject "New_Col". pyCGM does not say who recorded the trial; cite
+    Schwartz and Dixon (2018) if you use pyCGM's data.
+
+deeplabcut/ant_video_5DLC_dlcrnetms5_AntsFeb11shuffle1_100000_el.h5:
+  sha256sum: 026fbb2d2cd7c6cc2ff1625fbdc2bce9585056446131061371e56ceefc5d7cc3
+  source_software: DeepLabCut
+  type: poses
+  fps: null
+  species: Atta cephalotes
+  number_of_individuals: 2
+  version:
+    source_version: 2.3.9
+    format_version: null
+    determined_by: inferred
+    variant: multi-animal-tracklets-with-unique-bodyparts
+  shared_by:
+    name: Mackenzie W. Mathis
+    affiliation: Adaptive Motor Control Lab, EPFL
+  upstream:
+    source: https://gin.g-node.org/CatalystNeuro/behavior_testing_data
+    file_name: DLC/multi_subject_h5/landmarks_and_subject_keypoints/ant_video_5DLC_dlcrnetms5_AntsFeb11shuffle1_100000_el.h5
+    via: https://github.com/AdaptiveMotorControlLab/Leaf_Ant_Analysis
+    license: Apache-2.0
+  modification: >-
+    None relative to the GIN file. The GIN file is itself a 300-frame excerpt
+    (frames 13,670 to 13,969, re-indexed from 0) of
+    data/ant_video_5DLC_dlcrnetms5_AntsFeb11shuffle1_100000_el.h5 in
+    Leaf_Ant_Analysis (36,480 frames); checked value for value.
+  note: >-
+    Apache-2.0; see LICENSES/Leaf_Ant_Analysis-Apache-2.0.txt. The GIN folder
+    carries its own LICENSE (Apache-2.0), which overrides that repository's
+    ODbL / CC BY-SA 4.0 default; nothing else is taken from it. Added to GIN by
+    Heberto Mayorquin (CatalystNeuro). A multi-animal DeepLabCut "_el.h5"
+    tracklet file (pandas HDFStore, key "tracks"; scorer
+    DLC_dlcrnetms5_AntsFeb11shuffle1_100000) with two individuals (ant_1 and
+    drug_ant2, each with ant_head, ant_midbody and ant_end) plus 30 unique
+    bodyparts under "single" for the arena landmarks (corners, boundaries,
+    food corners, pupa piles). From Gilbert,
+    Glastad et al. (2024); the DeepLabCut version is the one the
+    Leaf_Ant_Analysis README states, not read from the file.
+
+ethovision/S22-Track-Cupim02SeptTarde-Trial.txt:
+  sha256sum: 266dce5430a7f57242994e7f729909f1aab53f53c409fc6bc3bca362192aca6b
+  source_software: EthoVision XT
+  type: poses
+  fps: 2
+  species: Cornitermes cumulans
+  number_of_individuals: 1
+  version:
+    source_version: null
+    format_version: null
+    determined_by: unknown
+    variant: track-export-txt-semicolon
+  shared_by:
+    name: Julieth Castiblanco, Paulo Fellipe Cristaldo, Leticia Ribeiro Paiva, Og DeSouza
+    orcid: 0000-0002-4604-0759, 0000-0003-4939-0487, null, 0000-0002-7108-0242
+    affiliation: Federal University of Vicosa and others
+  upstream:
+    source: https://doi.org/10.5281/zenodo.3628061
+    file_name: S22-Track-Cupim02SeptTarde-Trial.txt
+    license: CC-BY-4.0
+  modification: None. Byte-identical to the upstream file.
+  note: >-
+    For a future reader; aniread cannot read EthoVision yet. A raw EthoVision
+    XT track export of one focal termite worker: 33 header lines of quoted
+    "key";"value"; pairs (experiment, arena, subject, start time
+    02/09/2014 18:04:58, tracking source), then semicolon-separated samples
+    every 0.5 s with Trial time, Recording time, X center, Y center (mm),
+    Area, Areachange, Elongation, Distance moved, Velocity and Result 1. A
+    unit row follows the column names. ISO-8859-1 encoded (the unit "mm²"),
+    CRLF line endings, decimal commas in header values but decimal points in
+    the data, "-" for missing values. The smallest raw file in the record
+    (1,876 samples), although its header states a six-hour trial. The
+    EthoVision version is not recorded. The dataset is documented at
+    https://osf.io/r5vaq.
+
+fasttrack/tracking.txt:
+  sha256sum: a7b2188571d11f03bf01a865c8baebf5221671fcd7b035f58c3876f5992d11b3
+  source_software: FastTrack
+  type: poses
+  fps: null
+  species: null
+  number_of_individuals: 14
+  version:
+    source_version: null
+    format_version: null
+    determined_by: inferred
+    variant: tracking-txt
+  shared_by:
+    name: Benjamin Gallois
+    affiliation: FastTrack developer
+  upstream:
+    source: https://github.com/FastTrackOrg/FastTrack
+    file_name: test/dataSet/images/Groundtruth/Tracking_Result/tracking.txt
+    license: GPL-3.0
+  modification: None. Byte-identical to the upstream file.
+  note: >-
+    GPL-3.0; see LICENSES/FastTrack-GPL-3.0.txt. FastTrack's own accuracy-test
+    result: tab-separated, 23 columns (head, tail and body ellipses, curvature,
+    area, perimeter, imageNumber, id), 200 frames, 14 objects. Committed on
+    2020-07-27, after FastTrack 5.0.0 (2020-07-17), and unchanged since apart
+    from a folder rename; the file records no version, so the release is
+    inferred from the commit date. Cite Gallois and Candelier (2021).
+
+fasttrack/tracking.db:
+  sha256sum: 88624863fd44c8c9dfb52060f86f47b72fdf9fbb8a2c2096304b07e04b14e006
+  source_software: FastTrack
+  type: poses
+  fps: null
+  species: null
+  number_of_individuals: 14
+  version:
+    source_version: null
+    format_version: null
+    determined_by: inferred
+    variant: tracking-sqlite
+  shared_by:
+    name: Benjamin Gallois
+    affiliation: FastTrack developer
+  upstream:
+    source: https://github.com/FastTrackOrg/FastTrack
+    file_name: test/dataSet/images/Groundtruth/Tracking_Result/tracking.db
+    license: GPL-3.0
+  modification: None. Byte-identical to the upstream file.
+  note: >-
+    GPL-3.0; see LICENSES/FastTrack-GPL-3.0.txt. The same tracking as
+    tracking.txt (2,475 rows, same values) in FastTrack's SQLite backend: one
+    table, "tracking", with the same 23 columns. Committed on 2022-01-06 with
+    "add database as backend", between FastTrack 6.0.1 and 6.1.0, the release
+    that introduced the database; inferred from the commit, not recorded in
+    the file.
 
 fictrac/fictrac_sample.dat:
   sha256sum: e756512d6e94ab8c2b2a81c85f85ee7d69a54e4b6194e21064b62c3f239b1f77
@@ -197,6 +683,11 @@ freemocap/freemocap_test_data_by_frame.csv:
     This file has 8 columns
     (frame,timestamp,timestamp_by_camera,model,keypoint,x,y,z). From v1.8.0 FreeMoCap
     writes a 9th, reprojection_error.
+    The sample-data audit (movement-data#12) found that it matches none of
+    FreeMoCap's published test-data release assets byte for byte. Its licence
+    is unknown: the FreeMoCap repository is AGPL-3.0, and nothing extends that
+    to the release assets. The v1.8.0 test-data asset has a 9-column
+    by_frame.csv (movement-data#10).
 
 idtrackerai/trajectories.h5:
   sha256sum: ad1dc121580e79622d68b68003042b9ebdca4f37181d28d34af48ada60cdc53a
@@ -222,6 +713,10 @@ idtrackerai/trajectories.h5:
     Shared freely by one of the idtracker.ai developers. Tracked from test_B.avi,
     the project's own installation-test video. Estimated accuracy 0.998 before
     interpolation, 1.0 after.
+    The sample-data audit (movement-data#12) found no licensed public
+    idtracker.ai outputs upstream, so these files are the only samples; the
+    licence still needs confirming with Jordi Torrents. The idtracker.ai lab's
+    own example data on Google Drive states no licence.
 
 idtrackerai/trajectories_csv/trajectories.csv:
   sha256sum: c7384191e34f1adea2f08bf7a898bd4695942614508bc4dc0d518f13b9741be5
@@ -291,6 +786,115 @@ idtrackerai/trajectories_csv/attributes.json:
     Session metadata accompanying the CSV export. This is the file that records the
     idtracker.ai version, the frame rate and the source video path.
 
+idtrackerai/trajectories_csv_no_fps/trajectories.csv:
+  sha256sum: 4e4c8312f20f5c4b14f0d86af509c0ceb1146c001af0a22ac6f51771bd18fe1c
+  source_software: idtracker.ai
+  type: poses
+  fps: null
+  species: null
+  number_of_individuals: 2
+  version:
+    source_version: null
+    format_version: null
+    determined_by: inferred
+    variant: csv-no-time-column
+  shared_by:
+    name: Mikkel Roald-Arbol
+    orcid: 0000-0002-9998-0058
+    affiliation: animovement
+  upstream:
+    source: >-
+      Synthetic, written with idtracker.ai's own CSV writer from release 6.0.15 (https://gitlab.com/polavieja_lab/idtrackerai; idtracker.ai is GPL-3.0)
+    license: CC-BY-4.0
+  modification: null
+  note: >-
+    SYNTHETIC. What idtracker.ai writes when it could not read the video's
+    frame rate: _save_array_to_csv() from idtracker.ai 6.0.15
+    (src/idtrackerai/utils/trajectories_io.py), copied verbatim and called
+    with fps=None, adds no time column, so the file is just x1,y1,x2,y2. Two
+    animals over four frames, the second lost in frame 3. Written for aniread
+    PR #163, where it is tests/testthat/data/idtrackerai/trajectories_csv_no_fps/.
+
+idtrackerai/trajectories_csv_no_fps/id_probabilities.csv:
+  sha256sum: ba3404b4f49134eafa14bffc3d166a9ac21295f6ced2b093aa8df73b46f42357
+  source_software: idtracker.ai
+  type: poses
+  fps: null
+  species: null
+  number_of_individuals: 2
+  version:
+    source_version: null
+    format_version: null
+    determined_by: inferred
+    variant: csv-no-time-column
+  shared_by:
+    name: Mikkel Roald-Arbol
+    orcid: 0000-0002-9998-0058
+    affiliation: animovement
+  upstream:
+    source: >-
+      Synthetic, written with idtracker.ai's own CSV writer from release 6.0.15 (https://gitlab.com/polavieja_lab/idtrackerai; idtracker.ai is GPL-3.0)
+    license: CC-BY-4.0
+  modification: null
+  note: >-
+    SYNTHETIC. Identity probabilities accompanying trajectories.csv in this
+    folder, written the same way (id_probabilities1,id_probabilities2, no time
+    column), with the probability of 0 that idtracker.ai sets where an animal
+    is lost. Written for aniread PR #163.
+
+lightningpose/180607_004.train_frames=75.rng=0.top.csv:
+  sha256sum: 7de25ecb1cd958b383e992a33f65a6c8e3941230d47358eec2b3a796969f57fb
+  source_software: Lightning Pose
+  type: poses
+  fps: null
+  species: mouse
+  number_of_individuals: 1
+  version:
+    source_version: null
+    format_version: null
+    determined_by: unknown
+    variant: per-view-csv-mhcrnn
+  shared_by:
+    name: Matt Whiteway
+    affiliation: Paninski lab, Columbia University
+  upstream:
+    source: https://github.com/paninski-lab/eks
+    file_name: data/mirror-mouse-separate/180607_004.train_frames=75.rng=0.top.csv
+    license: MIT
+  modification: None. Byte-identical to the upstream file.
+  note: >-
+    MIT, Copyright (c) 2023 Cole Hurwitz; see LICENSES/eks-MIT.txt. Lightning
+    Pose predictions for the top view of a two-view (mirror) mouse video,
+    split into one file per camera: the DeepLabCut-style three-row header
+    (scorer heatmap_mhcrnn_tracker, bodyparts paw1LH, paw2LF, paw3RF, paw4RH,
+    coords x/y/likelihood), 501 frames. One of five ensemble members
+    (rng=0..4) shipped for EKS's multicam example. Pairs with the .bot.csv.
+    The Lightning Pose version is not recorded. Cite Biderman et al. (2024).
+
+lightningpose/180607_004.train_frames=75.rng=0.bot.csv:
+  sha256sum: eaf966dcc1cc78420083db51e3e94c8dae29abe5f6267d0e6110c5d404a93a55
+  source_software: Lightning Pose
+  type: poses
+  fps: null
+  species: mouse
+  number_of_individuals: 1
+  version:
+    source_version: null
+    format_version: null
+    determined_by: unknown
+    variant: per-view-csv-mhcrnn
+  shared_by:
+    name: Matt Whiteway
+    affiliation: Paninski lab, Columbia University
+  upstream:
+    source: https://github.com/paninski-lab/eks
+    file_name: data/mirror-mouse-separate/180607_004.train_frames=75.rng=0.bot.csv
+    license: MIT
+  modification: None. Byte-identical to the upstream file.
+  note: >-
+    MIT; see LICENSES/eks-MIT.txt. Bottom view of the same frames as the
+    .top.csv; see that entry.
+
 motive/motive_sample.csv:
   sha256sum: 2a59557dd956fc862aaaf8cc7d5c39d577b6657de8f656b750b59888da464fb2
   source_software: OptiTrack Motive
@@ -317,6 +921,42 @@ motive/motive_sample.csv:
     global coordinate space, metres. Three rigid bodies - device02, device03, device05 -
     each contributing 8 columns (4 rotation, 3 position, 1 error), so 24 columns in all.
     The names suggest tracked hardware or marker-tagged objects rather than bare animals.
+    The sample-data audit (movement-data#12) identified it as pathviewr's
+    inst/extdata/pathviewr_motive_example_data.csv (ropensci/pathviewr 1.1.8;
+    authors Baliga, Armstrong and Press), with CRLF line endings changed to LF
+    and the final newline dropped. pathviewr is GPL-3, so this file is GPL-3;
+    the license field above is left for a separate decision. A small
+    MIT-licensed Motive file, V4_throw_003.csv (format version 1.24), is now
+    beside it.
+
+motive/V4_throw_003.csv:
+  sha256sum: 33edc23aededc4adf9040864a386a8c2e025dc1d92b01c8c3b45d7ddc676814b
+  source_software: OptiTrack Motive
+  type: poses
+  fps: 120
+  species: null
+  number_of_individuals: 1
+  version:
+    source_version: null
+    format_version: '1.24'
+    determined_by: file
+    variant: rigid-body-plus-markers-quaternion
+  shared_by:
+    name: basfora
+    affiliation: github.com/basfora
+  upstream:
+    source: https://github.com/basfora/gliderstudio
+    file_name: data/mydata/V4_throw_003.csv
+    license: MIT
+  modification: None. Byte-identical to the upstream file.
+  note: >-
+    MIT, Copyright (c) 2024 basfora; see LICENSES/gliderstudio-MIT.txt. A
+    permissively licensed Motive export, found in the sample-data audit
+    (movement-data#12). "Format Version,1.24", take V4_throw_003, captured
+    2024-04-22 at 120 Hz, 354 frames, quaternion rotations, millimetres,
+    global coordinate space. One rigid body (V4Glider: 4 rotation and 3
+    position columns) and its five markers (3 position columns each). A
+    thrown glider, not an animal; kept for the format.
 
 movement/SLEAP_two-mice_octagon.analysis-1768334869096.nc:
   sha256sum: 7433b67770e8f656faeba79ac9c7cfd908c34d4e7956958205c0302aa30528b9
@@ -349,6 +989,101 @@ movement/SLEAP_two-mice_octagon.analysis-1768334869096.nc:
     not recorded in the netCDF, so the variant is inferred from the dimension and
     attribute layout (time/space/keypoints/individuals with position and confidence).
 
+movement/two-mice_frames.nc:
+  sha256sum: 193ab901ec60ad132273d69637f86438edb36526bb24cfa536351e09a3a30e04
+  source_software: movement
+  type: poses
+  fps: null
+  species: mouse
+  number_of_individuals: 2
+  version:
+    source_version: null
+    format_version: null
+    determined_by: inferred
+    variant: movement-netcdf-poses-time-in-frames
+  shared_by:
+    name: Mehul Rastogi, Chunyu A. Duan
+    orcid: 0000-0002-5315-3188, 0000-0002-3095-8653
+    affiliation: Sainsbury Wellcome Centre, UCL
+  upstream:
+    source: >-
+      movement/SLEAP_two-mice_octagon.analysis-1768334869096.nc in this repository, cut with the rhdf5 R package (Bioconductor)
+    license: CC-BY-4.0
+  modification: >-
+    Derived: the first 4 frames of position and confidence, with individuals,
+    keypoints and space, written with rhdf5 into a new HDF5 file. Root
+    attributes set to what movement writes without a frame rate
+    (time_unit = "frames", no fps), time 0 to 3, source_file reduced to its
+    basename.
+  note: >-
+    DERIVED, inherits CC BY 4.0 from the octagon sample (Rastogi and Duan, via
+    movement's GIN; https://doi.org/10.1101/2025.02.14.638359). Not written by
+    movement itself (it could not be installed where the fixture was made),
+    but it has the datasets and root attributes movement writes and that
+    readers read. Uses the source file's older plural dimension names
+    (individuals, keypoints). Written for aniread PR #158 (read_movement()
+    on a file saved without fps).
+
+movement/synthetic_3d.nc:
+  sha256sum: aa8f79ecc5a0dbba120e0b3cb53b2f46ca3d4ca190b2281e481e3f8fff044ff0
+  source_software: movement
+  type: poses
+  fps: 10
+  species: null
+  number_of_individuals: 2
+  version:
+    source_version: null
+    format_version: null
+    determined_by: inferred
+    variant: movement-netcdf-poses-3d
+  shared_by:
+    name: Mikkel Roald-Arbol
+    orcid: 0000-0002-9998-0058
+    affiliation: animovement
+  upstream:
+    source: >-
+      Synthetic, written with rhdf5 in movement's on-disk layout by the rhdf5 R package (Bioconductor)
+    license: CC-BY-4.0
+  modification: null
+  note: >-
+    SYNTHETIC. A 3D movement poses file: 2 individuals (bee1, bee2), 2
+    keypoints (head, tail), space x/y/z, 3 frames at 10 fps. Each value
+    encodes where it belongs (1000 * individual + 100 * keypoint + 10 * axis +
+    frame; confidence (100 * individual + 10 * keypoint + frame) / 1000), so a
+    reader can be checked for placing x, y, z and confidence on the right
+    row. Root attributes name source_software "Anipose" and source_file
+    "bees.csv" as labels only; no Anipose file exists. Not written by
+    movement itself. Written for aniread PR #161.
+
+nwb/0.3.0_poseestimation_one_camera.nwb:
+  sha256sum: 83825ab7fc2bfdca91c0e641ee84d88fe2ee772740a1ab39599e7c5f9b69523b
+  source_software: NWB (ndx-pose)
+  type: poses
+  fps: null
+  species: null
+  number_of_individuals: 1
+  version:
+    source_version: null
+    format_version: ndx-pose 0.3.0, NWB 2.9.0
+    determined_by: file
+    variant: ndx-pose-poseestimation-one-camera
+  shared_by:
+    name: Ryan Ly
+    affiliation: ndx-pose maintainers
+  upstream:
+    source: https://github.com/rly/ndx-pose
+    file_name: src/pynwb/tests/back_compat/0.3.0_poseestimation_one_camera.nwb
+    license: BSD-3-Clause
+  modification: None. Byte-identical to the upstream file.
+  note: >-
+    For a future reader; aniread cannot read NWB yet. BSD-3-Clause; see
+    LICENSES/ndx-pose-BSD-3-Clause.txt. A synthetic back-compatibility test
+    file written by ndx-pose's generate_data_0.3.0.py: one PoseEstimation in
+    processing/behavior with two PoseEstimationSeries (front_left_paw,
+    front_right_paw), 10 timestamps from 0 to 10 s, a Skeleton, and
+    source_software "DeepLabCut" 2.2b8 as made-up metadata. The file embeds
+    its namespaces (core 2.9.0, hdmf-common 1.8.0, ndx-pose 0.3.0).
+
 octron/sample-data.csv:
   sha256sum: c8fcb78ad4122ec5ceb1162f9cb7414456fa9252538bc94a571256e9b16b9704
   source_software: Octron
@@ -378,6 +1113,155 @@ octron/sample-data.csv:
     created_at) above a 16-column table. Because the label was deliberately
     anonymised, treat "worm" and "my_cool_video_of_a_worm.mp4" as placeholders and do
     not cite this file as an example of any particular species.
+
+opensim/gait10dof18musc_walk_CRLF_line_ending.trc:
+  sha256sum: 3d4abce2ca7d55f4af90bfb35ef261de858756199e112cbea456fde2149f0090
+  source_software: OpenSim
+  type: poses
+  fps: 60
+  species: human
+  number_of_individuals: 1
+  version:
+    source_version: null
+    format_version: null
+    determined_by: file
+    variant: trc-markers
+  shared_by:
+    name: null
+    affiliation: OpenSim (Stanford University)
+  upstream:
+    source: https://github.com/opensim-org/opensim-core
+    file_name: OpenSim/Tests/shared/gait10dof18musc_walk_CRLF_line_ending.trc
+    license: Apache-2.0
+  modification: None relative to the blob in the repository.
+  note: >-
+    For a future reader; aniread cannot read TRC yet. Apache-2.0, with
+    opensim-core's NOTICE; see LICENSES/opensim-core-Apache-2.0.txt. A
+    marker-trajectory TRC (PathFileType 4, X/Y/Z): 41 markers in mm, 10 frames
+    at 60 Hz, from subject01_walk1. Despite its name the file has LF line
+    endings here, because opensim-core's .gitattributes (text=auto)
+    normalises line endings in the repository; a Windows checkout would give
+    CRLF. Cite Delp et al. (2007) and Seth et al. (2018), as OpenSim's NOTICE
+    asks.
+
+opensim/subject01_walk1_ik.mot:
+  sha256sum: 752a125afddfa442c76fe74807b66b3d8e3836cac3a15cd409283766bcf402d4
+  source_software: OpenSim
+  type: poses
+  fps: 60
+  species: human
+  number_of_individuals: 1
+  version:
+    source_version: null
+    format_version: null
+    determined_by: file
+    variant: mot-inverse-kinematics
+  shared_by:
+    name: null
+    affiliation: OpenSim (Stanford University)
+  upstream:
+    source: https://github.com/opensim-org/opensim-core
+    file_name: Applications/ID/tests/resources/subject01_walk1_ik.mot
+    license: Apache-2.0
+  modification: None. Byte-identical to the upstream file.
+  note: >-
+    For a future reader; aniread cannot read MOT yet. Apache-2.0, with
+    opensim-core's NOTICE; see LICENSES/opensim-core-Apache-2.0.txt. Inverse
+    kinematics output (joint angles in degrees, pelvis translations in m) of
+    the same walking trial: a "Coordinates" header ending in endheader, then
+    211 rows by 24 columns (time and 23 generalised coordinates) from 0.5 s
+    at 1/60 s.
+
+sleap/SLEAP_three-mice_Aeon_mixed-labels.analysis.csv:
+  sha256sum: 7e5398c317b3d64967b6bc6e6c8c5d6b5c69bacae96906706dab60d0005554af
+  source_software: SLEAP
+  type: poses
+  fps: 50
+  species: mouse
+  number_of_individuals: 3
+  version:
+    source_version: null
+    format_version: null
+    determined_by: inferred
+    variant: analysis-csv
+  shared_by:
+    name: Chang Huan Lo
+    affiliation: Sainsbury Wellcome Centre, UCL
+  upstream:
+    source: https://gin.swc.ucl.ac.uk/neuroinformatics/movement-sample-data
+    file_name: poses/SLEAP_three-mice_Aeon_mixed-labels.analysis.h5
+    license: CC-BY-4.0
+  modification: >-
+    Derived: the first 20 frames of the upstream .h5, written in SLEAP's
+    analysis CSV layout (one row per instance: track, frame_idx,
+    instance.score, then centroid.x, centroid.y, centroid.score), with an
+    unquoted header as SLEAP writes it. Not written by SLEAP or sleap-io; the
+    layout follows sleap_io/io/csv.py.
+  note: >-
+    DERIVED, inherits CC BY 4.0 from the movement sample data. Three mice in
+    Project Aeon's arena, tracks AEON3B_NTP, AEON3B_TP1 and AEON3B_TP2, one
+    node (centroid). Kept here because GIN serves only the .h5 and .slp forms.
+    Checked against the .h5 when made: both read to the same x, y and
+    confidence. Made for aniread PR #124 (read_sleap() on the analysis CSV),
+    where it is tests/testthat/data/sleap/.
+
+sleap/new_video.v002.000_mice_new.analysis.h5:
+  sha256sum: 97df6e0ab4edec8cc4436a1762539d4566e9f14d339ac783ab30cb7108ca7f6f
+  source_software: SLEAP
+  type: poses
+  fps: null
+  species: mouse
+  number_of_individuals: 2
+  version:
+    source_version: null
+    format_version: null
+    determined_by: unknown
+    variant: analysis-h5
+  shared_by:
+    name: Talmo Lab at the Salk Institute
+    affiliation: SLEAP developers
+  upstream:
+    source: https://github.com/talmolab/cosyne-tutorial-data
+    file_name: new_data/results.zip/new_video.v002.000_mice_new.analysis.h5
+    license: BSD-3-Clause
+  modification: None. Byte-identical to the file in the zip.
+  note: >-
+    BSD-3-Clause, Copyright (c) 2024, Talmo Lab at the Salk Institute; see
+    LICENSES/cosyne-tutorial-data-BSD-3-Clause.txt. Results of the Cosyne 2024
+    SLEAP tutorial: two tracked mice (track_0, track_1), skeleton head, torso
+    and tail_base, 2,820 frames. provenance is empty and no SLEAP version is
+    recorded; labels_path and video_path hold absolute paths from the machine
+    that exported it (/home/liezl/Desktop/...). The video and .slp in the zip
+    are not included.
+
+sleap/new_video.v002.000_mice_new.analysis.csv:
+  sha256sum: 67a6e8d411160472d94336be89513a3aa66f5d14b2850e647cc692d5a0cf195c
+  source_software: SLEAP
+  type: poses
+  fps: null
+  species: mouse
+  number_of_individuals: 2
+  version:
+    source_version: null
+    format_version: null
+    determined_by: unknown
+    variant: analysis-csv
+  shared_by:
+    name: Talmo Lab at the Salk Institute
+    affiliation: SLEAP developers
+  upstream:
+    source: https://github.com/talmolab/cosyne-tutorial-data
+    file_name: new_data/results.zip/new_video.v002.000_mice_new.analysis.csv
+    license: BSD-3-Clause
+  modification: >-
+    Excerpt: the header and every row with frame_idx below 200 (379 of 5,560
+    rows), otherwise byte-identical. The upstream file is 1.0 MB.
+  note: >-
+    BSD-3-Clause; see LICENSES/cosyne-tutorial-data-BSD-3-Clause.txt. SLEAP's
+    own analysis CSV export of the same tracking as the .h5 beside it: track,
+    frame_idx, instance.score and an x/y/score triple per node. Unlike the
+    Aeon CSV it has three nodes and a frame where only one mouse was found, so
+    instance rows are missing rather than empty.
 
 trackball/single/opticalflow_sensor_1.csv:
   sha256sum: 8624ac10789166c1337684b0df0d7ec73f0053d401adc862c22df98b6a33e68e
@@ -642,6 +1526,86 @@ trackmate/ExampleTrackMateData.xml:
     LICENSES/TrackMateR-MIT.txt. Written by TrackMate 7.7.1 on 2022-06-23, which the
     XML records in its root element. aniread's read_trackmate() is itself adapted
     from the TrackMateR reader.
+
+trackmate/CelegansEarly_MIP.xml:
+  sha256sum: 77b0017dc1fa7f4fd28ff9ce32fca4379e00fa6d2aec7451b67f122e1fff937f
+  source_software: TrackMate
+  type: poses
+  fps: null
+  species: Caenorhabditis elegans
+  number_of_individuals: null
+  version:
+    source_version: 7.0.4-SNAPSHOT-a398a81ceb19ebb58a163d8650d3f40a76788246
+    format_version: null
+    determined_by: file
+    variant: trackmate-xml
+  shared_by:
+    name: Jean-Yves Tinevez
+    orcid: 0000-0002-0998-4718
+    affiliation: Institut Pasteur
+  upstream:
+    source: https://doi.org/10.5281/zenodo.5132918
+    file_name: CelegansEarly_MIP.xml
+    license: CC-BY-4.0
+  modification: None. Byte-identical to the upstream file.
+  note: >-
+    Early C. elegans embryo development tracked with TrackMate 7.0.4 (a
+    snapshot build) on 2021-07-24. Spatial unit "µm", time unit "min", 52
+    spots. Exercises a time unit other than frames or seconds.
+
+trackmate/trpL_150310-11.xml:
+  sha256sum: 2c471076cef1ccdd897dfd2032b18fcae5dd952d085db4e89836ab0be7b286d4
+  source_software: TrackMate
+  type: poses
+  fps: null
+  species: null
+  number_of_individuals: null
+  version:
+    source_version: 7.13.2
+    format_version: null
+    determined_by: file
+    variant: trackmate-xml
+  shared_by:
+    name: Simon van Vliet, Annina Winkler
+    affiliation: ETH Zurich
+  upstream:
+    source: https://doi.org/10.5281/zenodo.12600359
+    file_name: trpL_150310-11.xml
+    license: CC-BY-4.0
+  modification: None. Byte-identical to the upstream file.
+  note: >-
+    Bacterial colony timelapse (trpL/150310-11) from van Vliet et al. (2018),
+    the example for Trackastra's integration in TrackMate, tracked with
+    TrackMate 7.13.2 on 2024-06-28. The spatial unit is blank (spatialunits="
+    ", a single space), time unit "frame"; 128 spots. Exercises a file with no
+    usable spatial unit.
+
+trackmate/U251_mitoRED_lifeAct670_3-MIP.xml:
+  sha256sum: e8e6e3dc1d2dd1e1179b4932cddaf2a2624425ec5cde7845172bb9920d54440a
+  source_software: TrackMate
+  type: poses
+  fps: null
+  species: human
+  number_of_individuals: null
+  version:
+    source_version: 7.0.0
+    format_version: null
+    determined_by: file
+    variant: trackmate-xml
+  shared_by:
+    name: Ines Saenz de Santa Maria, Jean-Yves Tinevez
+    orcid: 0000-0002-1868-3001, 0000-0002-0998-4718
+    affiliation: Institut Pasteur
+  upstream:
+    source: https://doi.org/10.5281/zenodo.12784611
+    file_name: U251_mitoRED_lifeAct670_3-MIP.xml
+    license: CC-BY-4.0
+  modification: None. Byte-identical to the upstream file.
+  note: >-
+    U251 glioblastoma cells (mitochondria and actin labelled), from the moving
+    kymograph tutorial for TrackMate; written by TrackMate 7.0.0. Spatial unit
+    "micron" (spelled out, unlike the "µm" of CelegansEarly_MIP.xml), time
+    unit "frame"; 206 spots.
 
 trex/beetle.csv:
   sha256sum: b586668d8c98956a1b85a0b61d6d830f55188c8e69a16c4e58b12425a9130e08
