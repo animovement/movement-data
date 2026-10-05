@@ -74,6 +74,149 @@ The files in `data/AnimalTA/` were shared freely by
 and first author of its paper [5]. The two files cover AnimalTA's two export layouts — one wide column pair
 per arena, and one long format with explicit arena and individual columns.
 
+### Fixtures generated for aniread
+
+These files were made for the readers in [aniread](https://github.com/animovement/aniread)
+by [Mikkel Roald-Arbøl](https://orcid.org/0000-0002-9998-0058), and are released under
+the collection's CC BY 4.0 unless they derive from a file with other terms, in which
+case they inherit those. Synthetic files hold made-up values; where possible they were
+written by the producing software's own writer code, copied from its source, so their
+layout is the software's rather than a guess at it.
+
+- `data/AnimalTA/detailed/` (5 files), `head_tail_two_arenas.csv` and
+  `head_tail_two_arenas_corrected.csv`: synthetic, written with AnimalTA's own export
+  and coordinates code (AnimalTA is MIT; [GitHub](https://github.com/VioletteChiara/AnimalTA)
+  commit 840af1b, nine commits after v4.2.0). They cover AnimalTA's real detailed data
+  (one file per target), head and tail columns, and the `part0`/`part1` identities a
+  corrected head-and-tail file gets. Used by
+  [aniread#162](https://github.com/animovement/aniread/pull/162).
+- `data/idtrackerai/trajectories_csv_no_fps/`: synthetic, written by idtracker.ai
+  6.0.15's own `_save_array_to_csv()` with no frame rate, so with no time column. Used
+  by [aniread#163](https://github.com/animovement/aniread/pull/163).
+- `data/movement/two-mice_frames.nc`: derived, the first four frames of the octagon
+  sample above, cut with rhdf5 and given the root attributes movement writes without a
+  frame rate. It inherits CC BY 4.0 and the attribution to Mehul Rastogi and Chunyu A.
+  Duan [3]. Used by [aniread#158](https://github.com/animovement/aniread/pull/158).
+- `data/movement/synthetic_3d.nc`: synthetic, a 3D poses file in movement's on-disk
+  layout, written with rhdf5. Used by
+  [aniread#161](https://github.com/animovement/aniread/pull/161).
+- `data/sleap/SLEAP_three-mice_Aeon_mixed-labels.analysis.csv`: derived, the first 20
+  frames of `poses/SLEAP_three-mice_Aeon_mixed-labels.analysis.h5` from
+  [movement's GIN](https://gin.swc.ucl.ac.uk/neuroinformatics/movement-sample-data)
+  (CC BY 4.0, shared by Chang Huan Lo, Sainsbury Wellcome Centre), written in SLEAP's
+  analysis CSV layout as sleap-io defines it. Made for
+  [aniread#124](https://github.com/animovement/aniread/pull/124).
+
+### TrackMate examples from Zenodo
+
+Three TrackMate XML files are redistributed unmodified from Zenodo records released
+under CC BY 4.0. `CelegansEarly_MIP.xml`
+([10.5281/zenodo.5132918](https://doi.org/10.5281/zenodo.5132918)) is by
+[Jean-Yves Tinevez](https://orcid.org/0000-0002-0998-4718) (Institut Pasteur), written
+by TrackMate 7.0.4. `trpL_150310-11.xml`
+([10.5281/zenodo.12600359](https://doi.org/10.5281/zenodo.12600359)) is by Simon van
+Vliet and Annina Winkler (ETH Zurich), written by TrackMate 7.13.2 from images of
+van Vliet et al. [15]. `U251_mitoRED_lifeAct670_3-MIP.xml`
+([10.5281/zenodo.12784611](https://doi.org/10.5281/zenodo.12784611)) is by
+[Ines Saenz de Santa Maria](https://orcid.org/0000-0002-1868-3001) and Jean-Yves
+Tinevez (Institut Pasteur), written by TrackMate 7.0.0. Cite TrackMate [1, 2].
+
+### FastTrack test result
+
+`data/fasttrack/tracking.txt` and `tracking.db` are redistributed unmodified from
+[FastTrack](https://github.com/FastTrackOrg/FastTrack)'s own accuracy test
+(`test/dataSet/images/Groundtruth/Tracking_Result/`), by Benjamin Gallois, under
+**GPL-3.0**; the notice is in `LICENSES/FastTrack-GPL-3.0.txt`. The two hold the same
+tracking, as text and as FastTrack's SQLite database. Cite [8].
+
+### SLEAP tutorial results
+
+`data/sleap/new_video.v002.000_mice_new.analysis.h5` and `.analysis.csv` come from
+`new_data/results.zip` in
+[talmolab/cosyne-tutorial-data](https://github.com/talmolab/cosyne-tutorial-data), the
+data for the SLEAP tutorial at Cosyne 2024, released under **BSD-3-Clause**, Copyright
+(c) 2024, Talmo Lab at the Salk Institute; the notice is in
+`LICENSES/cosyne-tutorial-data-BSD-3-Clause.txt`. The `.h5` is unmodified; the `.csv`
+is cut to its first 200 frames. The video and `.slp` in the zip are not included.
+Cite SLEAP [9].
+
+### Lightning Pose predictions
+
+`data/lightningpose/180607_004.train_frames=75.rng=0.top.csv` and `.bot.csv` are
+redistributed unmodified from the
+[Ensemble Kalman Smoother](https://github.com/paninski-lab/eks) repository
+(`data/mirror-mouse-separate/`), released under **MIT**, Copyright (c) 2023 Cole
+Hurwitz; the notice is in `LICENSES/eks-MIT.txt`. Lightning Pose predictions of one
+mirror-mouse video, one file per camera view. Cite Lightning Pose [10].
+
+### DeepLabCut leafcutter ant tracklets
+
+`data/deeplabcut/ant_video_5DLC_dlcrnetms5_AntsFeb11shuffle1_100000_el.h5` is
+redistributed unmodified from CatalystNeuro's
+[behavior_testing_data](https://gin.g-node.org/CatalystNeuro/behavior_testing_data) on
+GIN (`DLC/multi_subject_h5/landmarks_and_subject_keypoints/`). That folder carries its
+own LICENSE, **Apache-2.0**, which overrides the repository's ODbL and CC BY-SA 4.0
+default; no other file is taken from that repository. The notice is in
+`LICENSES/Leaf_Ant_Analysis-Apache-2.0.txt`. The GIN file is a 300-frame excerpt of
+the tracking in
+[AdaptiveMotorControlLab/Leaf_Ant_Analysis](https://github.com/AdaptiveMotorControlLab/Leaf_Ant_Analysis),
+also Apache-2.0, by Mackenzie W. Mathis, from Gilbert, Glastad et al. [11].
+
+### Motive glider throw
+
+`data/motive/V4_throw_003.csv` is redistributed unmodified from
+[basfora/gliderstudio](https://github.com/basfora/gliderstudio)
+(`data/mydata/V4_throw_003.csv`), released under **MIT**, Copyright (c) 2024 basfora;
+the notice is in `LICENSES/gliderstudio-MIT.txt`. A Motive CSV, format version 1.24, of
+a thrown glider.
+
+### Vicon Nexus C3D
+
+`data/c3d/Sample_Static.c3d` is redistributed unmodified from
+[pyCGM](https://github.com/cadop/pyCGM) (`SampleData/ROM/Sample_Static.c3d`), released
+under **MIT**, Copyright (c) 2015 cadop (Mathew Schwartz); the notice is in
+`LICENSES/pyCGM-MIT.txt`. Written by Vicon Nexus 1.8.5; pyCGM does not state who
+recorded it. Cite pyCGM [12].
+
+### Accelerometer samples
+
+- `data/accelerometer/cwa/ax3_testfile.cwa` and `ax6_testfile.cwa` are redistributed
+  unmodified from [GGIRread](https://github.com/wadpac/GGIRread)
+  (`inst/testfiles/`), released under **Apache-2.0**; GGIRread names the Medical
+  Research Council UK and Accelting as copyright holders. The notice is in
+  `LICENSES/GGIRread-Apache-2.0.txt`.
+- `data/accelerometer/gt3x/example.gt3x` is redistributed unmodified from
+  [agcounts](https://github.com/bhelsel/agcounts) (`inst/extdata/example.gt3x`, also on
+  CRAN), released under **MIT**, Copyright (c) 2024 University of Kansas; the notice is
+  in `LICENSES/agcounts-MIT.txt`.
+- `data/accelerometer/bebe/CRAT_ACT_TrainingDataset_2016-2018IMRS.csv` is the first
+  2,000 rows of the rattlesnake data in `raw_desantis_rattlesnakes.zip` of the
+  Bio-logger Ethogram Benchmark ([10.5281/zenodo.7947104](https://doi.org/10.5281/zenodo.7947104)).
+  The dataset's own licence file states CC BY 4.0, by Dominic L. DeSantis, Vicente
+  Mata-Silva, Jerry D. Johnson and Amy E. Wagler, and asks that [7] be cited; cite the
+  benchmark [6] too.
+
+### Formats for future readers
+
+These are formats aniread cannot read yet, kept so readers can be written against real
+files.
+
+- `data/ethovision/S22-Track-Cupim02SeptTarde-Trial.txt` is redistributed unmodified
+  from [10.5281/zenodo.3628061](https://doi.org/10.5281/zenodo.3628061), CC BY 4.0, by
+  Julieth Castiblanco, Paulo Fellipe Cristaldo, Leticia Ribeiro Paiva and Og DeSouza: an
+  EthoVision XT track export of one focal termite (*Cornitermes cumulans*). The dataset
+  is documented at <https://osf.io/r5vaq>.
+- `data/nwb/0.3.0_poseestimation_one_camera.nwb` is redistributed unmodified from
+  [ndx-pose](https://github.com/rly/ndx-pose)
+  (`src/pynwb/tests/back_compat/`), released under **BSD-3-Clause**; the notice is in
+  `LICENSES/ndx-pose-BSD-3-Clause.txt`. A synthetic test file in ndx-pose 0.3.0.
+- `data/opensim/gait10dof18musc_walk_CRLF_line_ending.trc` and
+  `subject01_walk1_ik.mot` are redistributed from
+  [opensim-core](https://github.com/opensim-org/opensim-core), released under
+  **Apache-2.0**; the licence and OpenSim's NOTICE are in
+  `LICENSES/opensim-core-Apache-2.0.txt`. A marker TRC and an inverse kinematics MOT
+  of one walking trial. OpenSim asks that [13, 14] be cited.
+
 ## Provenance to be confirmed
 
 The following files predate this repository's record-keeping and their origin has not
@@ -92,3 +235,13 @@ each is resolved, do not assume the collection licence covers it.
 3. Rastogi, M., Duan, C. A., et al. (2025). Preprint. [doi: 10.1101/2025.02.14.638359](https://doi.org/10.1101/2025.02.14.638359)
 4. Romero-Ferrero, F., Bergomi, M. G., Hinz, R. C., Heras, F. J. H., & de Polavieja, G. G. (2019). "idtracker.ai: tracking all individuals in small or large collectives of unmarked animals". *Nature Methods* 16: 179–182. [doi: 10.1038/s41592-018-0295-5](https://doi.org/10.1038/s41592-018-0295-5)
 5. Chiara, V., & Kim, S.-Y. (2023). "AnimalTA: A highly flexible and easy-to-use program for tracking and analysing animal movement in different environments". *Methods in Ecology and Evolution* 14: 1699–1707. [doi: 10.1111/2041-210X.14115](https://doi.org/10.1111/2041-210X.14115)
+6. Hoffman, B., Cusimano, M., Baglione, V., Canestrari, D., et al. (2024). "A benchmark for computational analysis of animal behavior, using animal-borne tags". *Movement Ecology* 12: 78. [doi: 10.1186/s40462-024-00511-8](https://doi.org/10.1186/s40462-024-00511-8)
+7. DeSantis, D. L., Mata-Silva, V., Johnson, J. D., & Wagler, A. E. (2020). "Integrative Framework for Long-Term Activity Monitoring of Small and Secretive Animals: Validation With a Cryptic Pitviper". *Frontiers in Ecology and Evolution* 8: 169. [doi: 10.3389/fevo.2020.00169](https://doi.org/10.3389/fevo.2020.00169)
+8. Gallois, B., & Candelier, R. (2021). "FastTrack: An open-source software for tracking varying numbers of deformable objects". *PLOS Computational Biology* 17: e1008697. [doi: 10.1371/journal.pcbi.1008697](https://doi.org/10.1371/journal.pcbi.1008697)
+9. Pereira, T. D., Tabris, N., Matsliah, A., Turner, D. M., et al. (2022). "SLEAP: A deep learning system for multi-animal pose tracking". *Nature Methods* 19: 486-495. [doi: 10.1038/s41592-022-01426-1](https://doi.org/10.1038/s41592-022-01426-1)
+10. Biderman, D., Whiteway, M. R., Hurwitz, C., Greenspan, N., et al. (2024). "Lightning Pose: improved animal pose estimation via semi-supervised learning, Bayesian ensembling and cloud-native open-source tools". *Nature Methods* 21: 1316-1328. [doi: 10.1038/s41592-024-02319-1](https://doi.org/10.1038/s41592-024-02319-1)
+11. Gilbert, M. B., Glastad, K. M., Fioriti, M., Sorek, M., et al. (2024). "Neuropeptides specify and reprogram division of labor in the leafcutter ant *Atta cephalotes*". Preprint. [doi: 10.1101/2024.11.07.622473](https://doi.org/10.1101/2024.11.07.622473)
+12. Schwartz, M., & Dixon, P. C. (2018). "The effect of subject measurement error on joint kinematics in the conventional gait model: Insights from the open-source pyCGM tool using high performance computing methods". *PLOS ONE* 13: e0189984. [doi: 10.1371/journal.pone.0189984](https://doi.org/10.1371/journal.pone.0189984)
+13. Delp, S. L., Anderson, F. C., Arnold, A. S., Loan, P., et al. (2007). "OpenSim: Open-Source Software to Create and Analyze Dynamic Simulations of Movement". *IEEE Transactions on Biomedical Engineering* 54: 1940-1950. [doi: 10.1109/TBME.2007.901024](https://doi.org/10.1109/TBME.2007.901024)
+14. Seth, A., Hicks, J. L., Uchida, T. K., Habib, A., et al. (2018). "OpenSim: Simulating musculoskeletal dynamics and neuromuscular control to study human and animal movement". *PLOS Computational Biology* 14: e1006223. [doi: 10.1371/journal.pcbi.1006223](https://doi.org/10.1371/journal.pcbi.1006223)
+15. van Vliet, S., Dal Co, A., Winkler, A. R., Spriewald, S., et al. (2018). "Spatially Correlated Gene Expression in Bacterial Groups: The Role of Lineage History, Spatial Gradients, and Cell-Cell Interactions". *Cell Systems* 6: 496-507. [doi: 10.1016/j.cels.2018.03.009](https://doi.org/10.1016/j.cels.2018.03.009)
