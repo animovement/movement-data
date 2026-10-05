@@ -107,6 +107,27 @@ layout is the software's rather than a guess at it.
   analysis CSV layout as sleap-io defines it. Made for
   [aniread#124](https://github.com/animovement/aniread/pull/124).
 
+### FreeMoCap star jumps
+
+`data/freemocap/freemocap_star-jump_by_frame.csv`, `freemocap_star-jump_by_frame_v1.7.csv`,
+`freemocap_star-jump_by_trajectory.csv` and `freemocap_star-jump_mediapipe_body_3d_xyz.csv`
+are derived from `poses/FreeMoCap_star-jump_session-folder.zip` in
+[movement's sample data](https://gin.swc.ucl.ac.uk/neuroinformatics/movement-sample-data),
+released under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) and shared by
+Max Staras (Sainsbury Wellcome Centre, UCL): one person doing four star jumps, recorded
+with FreeMoCap and two cameras, 216 frames at 30 fps. They inherit CC BY 4.0; credit
+Max Staras and the movement project.
+
+They were written by FreeMoCap's own code from the recording's saved arrays (the
+post-processed skeleton, centres of mass and reprojection errors) with
+`scripts/freemocap_star_jump.py`, which runs FreeMoCap's `split_and_save()` and
+`DataSaver.save_all()` taken unchanged from its v1.8.2 tag (the 9-column `by_frame`
+file, the `by_trajectory` file and the wide body file) and its v1.7.3 tag (the 8-column
+`by_frame` file). No values were changed or filled. The face mesh is left out to keep
+the files small, and the timestamps are empty because the zip holds no videos folder.
+They replace `freemocap_test_data_by_frame.csv` as aniread's FreeMoCap sample
+([#10](https://github.com/animovement/movement-data/issues/10)).
+
 ### TrackMate examples from Zenodo
 
 Three TrackMate XML files are redistributed unmodified from Zenodo records released
@@ -225,7 +246,7 @@ each is resolved, do not assume the collection licence covers it.
 
 | File(s) | What is known | What is needed |
 | --- | --- | --- |
-| `freemocap/…by_frame.csv` | Tidy `by_frame` export, 8 columns, 222 frames; FreeMoCap's own test recording, shared by their developers | Which release it came from, and who supplied it |
+| `freemocap/freemocap_test_data_by_frame.csv` | Tidy `by_frame` export, 8 columns, 222 frames; FreeMoCap's own test recording, shared by their developers. Superseded by the star-jump files above | Which release it came from, and who supplied it |
 | `motive/motive_sample.csv` | Real take `sept-18_mixed-group_16-30`, 2019-09-18, 100 Hz, 190,951 frames | Whose recording it is |
 
 ## References
