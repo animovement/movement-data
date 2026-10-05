@@ -645,6 +645,176 @@ fictrac/fictrac_sample.dat:
     Headerless 25-column .dat matching doc/data_header.txt; the file records no
     version of its own, so the variant is inferred from the column count alone.
 
+freemocap/freemocap_star-jump_by_frame.csv:
+  sha256sum: a03127c61e1493dd910b90bf4494215d3add3df0f8d0b9212c3aa30082874b44
+  source_software: FreeMoCap
+  type: poses
+  fps: 30
+  species: human
+  number_of_individuals: 1
+  version:
+    source_version: v1.8.2
+    format_version: null
+    determined_by: inferred
+    variant: by-frame-tidy-9col
+  shared_by:
+    name: Max Staras
+    affiliation: Sainsbury Wellcome Centre, UCL
+  upstream:
+    source: https://gin.swc.ucl.ac.uk/neuroinformatics/movement-sample-data
+    file_name: poses/FreeMoCap_star-jump_session-folder.zip
+    license: CC-BY-4.0
+  modification: >-
+    Derived: written by FreeMoCap's own code from the arrays in the upstream
+    zip's recording_15_30_36_gmt+1/output_data/ (the post-processed skeleton,
+    centres of mass and reprojection errors, saved by FreeMoCap about v1.6),
+    with scripts/freemocap_star_jump.py. It runs the last two steps of
+    FreeMoCap's processing pipeline, split_and_save() and DataSaver.save_all(),
+    with FreeMoCap's modules taken unchanged from the git tag named in
+    version and skellytracker 2025.10.1024's MediapipeModelInfo. No values
+    were changed or filled. The 478 face mesh points are left out, to keep the
+    file small: the wide face file is removed before DataSaver runs, which its
+    loader handles as a recording without face data. The zip has no
+    synchronized_videos/ folder, so the timestamps are empty, as FreeMoCap
+    writes them for a recording without one.
+  note: >-
+    DERIVED, inherits CC BY 4.0 from the movement sample data: attribute
+    Max Staras (Sainsbury Wellcome Centre, UCL) and the movement project.
+    One person doing four star jumps, 216 frames at 30 fps (the rate is in the
+    upstream recording_parameters.json, not in this file), tracked with
+    MediaPipe holistic and two cameras. The tidy by_frame export with reprojection_error, the
+    9-column layout FreeMoCap writes from v1.7.4 (movement-data#10): models
+    mediapipe_body (33 points), mediapipe_hand (42) and mediapipe_com (15).
+    reprojection_error is the recording's own, NaN where a point was not
+    triangulated, and empty for the centres of mass, as FreeMoCap writes it.
+    Supersedes freemocap_test_data_by_frame.csv as aniread's FreeMoCap sample.
+    The version is inferred because FreeMoCap records none in the file; it
+    was written by v1.8.2's code.
+
+freemocap/freemocap_star-jump_by_frame_v1.7.csv:
+  sha256sum: 60a844c9e39489773ea085dbbb3ef61601900f6b87f55a0bdf09d8ac25a58e44
+  source_software: FreeMoCap
+  type: poses
+  fps: 30
+  species: human
+  number_of_individuals: 1
+  version:
+    source_version: v1.7.3
+    format_version: null
+    determined_by: inferred
+    variant: by-frame-tidy-8col
+  shared_by:
+    name: Max Staras
+    affiliation: Sainsbury Wellcome Centre, UCL
+  upstream:
+    source: https://gin.swc.ucl.ac.uk/neuroinformatics/movement-sample-data
+    file_name: poses/FreeMoCap_star-jump_session-folder.zip
+    license: CC-BY-4.0
+  modification: >-
+    Derived: written by FreeMoCap's own code from the arrays in the upstream
+    zip's recording_15_30_36_gmt+1/output_data/ (the post-processed skeleton,
+    centres of mass and reprojection errors, saved by FreeMoCap about v1.6),
+    with scripts/freemocap_star_jump.py. It runs the last two steps of
+    FreeMoCap's processing pipeline, split_and_save() and DataSaver.save_all(),
+    with FreeMoCap's modules taken unchanged from the git tag named in
+    version and skellytracker 2025.10.1024's MediapipeModelInfo. No values
+    were changed or filled. The 478 face mesh points are left out, to keep the
+    file small: the wide face file is removed before DataSaver runs, which its
+    loader handles as a recording without face data. The zip has no
+    synchronized_videos/ folder, so the timestamps are empty, as FreeMoCap
+    writes them for a recording without one.
+  note: >-
+    DERIVED, inherits CC BY 4.0 from the movement sample data: attribute
+    Max Staras (Sainsbury Wellcome Centre, UCL) and the movement project.
+    One person doing four star jumps, 216 frames at 30 fps (the rate is in the
+    upstream recording_parameters.json, not in this file), tracked with
+    MediaPipe holistic and two cameras. The same recording as freemocap_star-jump_by_frame.csv in
+    the 8-column by_frame layout FreeMoCap wrote before v1.7.4, with no
+    reprojection_error. The version is inferred because FreeMoCap records
+    none in the file; it was written by v1.7.3's code.
+
+freemocap/freemocap_star-jump_by_trajectory.csv:
+  sha256sum: b6aaacb2ccef52e9e20c63c530881709718199b54a6d278c027b0098469a1b66
+  source_software: FreeMoCap
+  type: poses
+  fps: 30
+  species: human
+  number_of_individuals: 1
+  version:
+    source_version: v1.8.2
+    format_version: null
+    determined_by: inferred
+    variant: by-trajectory
+  shared_by:
+    name: Max Staras
+    affiliation: Sainsbury Wellcome Centre, UCL
+  upstream:
+    source: https://gin.swc.ucl.ac.uk/neuroinformatics/movement-sample-data
+    file_name: poses/FreeMoCap_star-jump_session-folder.zip
+    license: CC-BY-4.0
+  modification: >-
+    Derived: written by FreeMoCap's own code from the arrays in the upstream
+    zip's recording_15_30_36_gmt+1/output_data/ (the post-processed skeleton,
+    centres of mass and reprojection errors, saved by FreeMoCap about v1.6),
+    with scripts/freemocap_star_jump.py. It runs the last two steps of
+    FreeMoCap's processing pipeline, split_and_save() and DataSaver.save_all(),
+    with FreeMoCap's modules taken unchanged from the git tag named in
+    version and skellytracker 2025.10.1024's MediapipeModelInfo. No values
+    were changed or filled. The 478 face mesh points are left out, to keep the
+    file small: the wide face file is removed before DataSaver runs, which its
+    loader handles as a recording without face data. The zip has no
+    synchronized_videos/ folder, so the timestamps are empty, as FreeMoCap
+    writes them for a recording without one.
+  note: >-
+    DERIVED, inherits CC BY 4.0 from the movement sample data: attribute
+    Max Staras (Sainsbury Wellcome Centre, UCL) and the movement project.
+    One person doing four star jumps, 216 frames at 30 fps (the rate is in the
+    upstream recording_parameters.json, not in this file), tracked with
+    MediaPipe holistic and two cameras. The by_trajectory export of the same recording, one
+    column triple per point. v1.7.3 writes it byte for byte the same.
+
+freemocap/freemocap_star-jump_mediapipe_body_3d_xyz.csv:
+  sha256sum: d08a419f5d07c2367a69442c2a3297aa2180e4f92ba550dbab6a183a494110a2
+  source_software: FreeMoCap
+  type: poses
+  fps: 30
+  species: human
+  number_of_individuals: 1
+  version:
+    source_version: v1.8.2
+    format_version: null
+    determined_by: inferred
+    variant: wide-per-model
+  shared_by:
+    name: Max Staras
+    affiliation: Sainsbury Wellcome Centre, UCL
+  upstream:
+    source: https://gin.swc.ucl.ac.uk/neuroinformatics/movement-sample-data
+    file_name: poses/FreeMoCap_star-jump_session-folder.zip
+    license: CC-BY-4.0
+  modification: >-
+    Derived: written by FreeMoCap's own code from the arrays in the upstream
+    zip's recording_15_30_36_gmt+1/output_data/ (the post-processed skeleton,
+    centres of mass and reprojection errors, saved by FreeMoCap about v1.6),
+    with scripts/freemocap_star_jump.py. It runs the last two steps of
+    FreeMoCap's processing pipeline, split_and_save() and DataSaver.save_all(),
+    with FreeMoCap's modules taken unchanged from the git tag named in
+    version and skellytracker 2025.10.1024's MediapipeModelInfo. No values
+    were changed or filled. The 478 face mesh points are left out, to keep the
+    file small: the wide face file is removed before DataSaver runs, which its
+    loader handles as a recording without face data. The zip has no
+    synchronized_videos/ folder, so the timestamps are empty, as FreeMoCap
+    writes them for a recording without one.
+  note: >-
+    DERIVED, inherits CC BY 4.0 from the movement sample data: attribute
+    Max Staras (Sainsbury Wellcome Centre, UCL) and the movement project.
+    One person doing four star jumps, 216 frames at 30 fps (the rate is in the
+    upstream recording_parameters.json, not in this file), tracked with
+    MediaPipe holistic and two cameras. The per-model wide body file,
+    output_data/mediapipe_body_3d_xyz.csv, of the same recording, written by
+    split_and_save(). It is byte for byte the file in the upstream zip, so
+    FreeMoCap about v1.6, v1.7.3 and v1.8.2 all write it the same.
+
 freemocap/freemocap_test_data_by_frame.csv:
   sha256sum: 7c9e743ad533a87b548177bff751b5833062ef3df0f173b12b0039f7ef76f06d
   source_software: FreeMoCap
@@ -688,6 +858,10 @@ freemocap/freemocap_test_data_by_frame.csv:
     is unknown: the FreeMoCap repository is AGPL-3.0, and nothing extends that
     to the release assets. The v1.8.0 test-data asset has a 9-column
     by_frame.csv (movement-data#10).
+    SUPERSEDED as aniread's FreeMoCap sample by
+    freemocap_star-jump_by_frame.csv (a real recording under CC BY 4.0, in
+    both by_frame layouts; movement-data#10). Kept until its licence is
+    decided.
 
 idtrackerai/trajectories.h5:
   sha256sum: ad1dc121580e79622d68b68003042b9ebdca4f37181d28d34af48ada60cdc53a

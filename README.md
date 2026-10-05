@@ -23,7 +23,8 @@ to cover the format variant they represent.
 | `ethovision/` | EthoVision XT | 1 | [Castiblanco, Cristaldo, Paiva and DeSouza](https://doi.org/10.5281/zenodo.3628061) | CC BY 4.0 |
 | `fasttrack/` | FastTrack | 2 | [FastTrack](https://github.com/FastTrackOrg/FastTrack) (Benjamin Gallois) | **GPL-3.0** |
 | `fictrac/` | FicTrac | 1 | [Chi-Yu Lee](https://orcid.org/0000-0001-6440-3050) | CC BY 4.0 |
-| `freemocap/` | FreeMoCap | 1 | The FreeMoCap developers — **exact source to confirm** | — |
+| `freemocap/` (`freemocap_star-jump_*`) | FreeMoCap | 4 | Max Staras, via [movement's GIN](https://gin.swc.ucl.ac.uk/neuroinformatics/movement-sample-data) | CC BY 4.0 |
+| `freemocap/` (`freemocap_test_data_by_frame.csv`) | FreeMoCap | 1 | The FreeMoCap developers — **exact source to confirm**; superseded | — |
 | `idtrackerai/` | idtracker.ai | 4 | [Jordi Torrents](https://orcid.org/0009-0006-6353-4079) | CC BY 4.0 |
 | `idtrackerai/` (`trajectories_csv_no_fps/`) | idtracker.ai (synthetic) | 2 | [Mikkel Roald-Arbøl](https://orcid.org/0000-0002-9998-0058) | CC BY 4.0 |
 | `lightningpose/` | Lightning Pose | 2 | [paninski-lab/eks](https://github.com/paninski-lab/eks) | **MIT** |
@@ -104,3 +105,6 @@ A file whose origin you cannot state is a file that should not be committed.
 
 Run `python3 update_hashes.py` to refresh the checksums after changing any data file;
 it rewrites `sha256sum` in place and reports files missing a metadata block.
+
+Scripts that regenerate derived files from their upstream are in `scripts/`, named in
+the files' `modification` field.
