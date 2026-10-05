@@ -335,7 +335,7 @@ movement/SLEAP_two-mice_octagon.analysis-1768334869096.nc:
     orcid: 0000-0002-5315-3188, 0000-0002-3095-8653
     affiliation: Sainsbury Wellcome Centre, UCL
   upstream:
-    source: https://gin.g-node.org/neuroinformatics/movement-test-data
+    source: https://gin.swc.ucl.ac.uk/neuroinformatics/movement-sample-data
     file_name: poses/SLEAP_two-mice_octagon.analysis.h5
     license: CC-BY-4.0
   modification: >-

@@ -23,7 +23,7 @@ the TrackMateR reader, with thanks to [@quantixed](https://github.com/quantixed)
 
 `data/movement/SLEAP_two-mice_octagon.analysis-1768334869096.nc` was produced by loading
 `poses/SLEAP_two-mice_octagon.analysis.h5` from
-[movement-test-data](https://gin.g-node.org/neuroinformatics/movement-test-data) with the
+[movement-sample-data](https://gin.swc.ucl.ac.uk/neuroinformatics/movement-sample-data) with the
 movement Python package and saving it to netCDF. The source data is licensed
 [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) and was shared by
 [Mehul Rastogi](https://orcid.org/0000-0002-5315-3188) and
